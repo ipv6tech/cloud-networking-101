@@ -36,7 +36,10 @@ This full day workshop will be split into two section, a lecture portion and a h
 > - BYO Sandbox or Free-Tier accounts in each of the CSPs you wish to use in the hands-on workshop.
 > _(As long as you delete the resources we build the cloud costs will be minimal for this workshop.)_
 
-> [!TIP] Consider creating a throw-away free-tier account using an email alias address like email+aws-i2@gmail.com or similar for each account.
+some txt
+
+> [!TIP]
+> Consider creating a throw-away free-tier account using an email alias address like email+aws-i2@gmail.com or similar for each account.
 
 ## Detailed Course Outline
 
