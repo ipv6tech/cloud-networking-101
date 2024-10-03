@@ -26,20 +26,20 @@ This full day workshop will be split into two section, a lecture portion and a h
 
 ### Second Half
 
-4. Hands-on workshop building hybrid and multicloud connectivity
+1. Hands-on workshop building hybrid and multicloud connectivity
 
 #### Requirements
-
-> - Laptop
-> - Access to https://console.internet2.edu
-> - BYO Sandbox or Free-Tier accounts in each of the CSPs you wish to use in the hands-on workshop.
-> _(As long as you delete the resources we build the cloud costs will be minimal for this workshop.)_
 
 > [!NOTE]
 > Further requirements will be shared with participants ahead of the workshop.
 
+- Laptop
+- Access to <https://console.internet2.edu>
+- BYO Sandbox or Free-Tier accounts in each of the CSPs you wish to use in the hands-on workshop.
+_(As long as you delete the resources we build the cloud costs will be minimal for this workshop.)_
+
 > [!TIP]
-> Consider creating a throw-away free-tier account using an email alias address like email+aws-i2@gmail.com or similar for each account.
+> Consider creating a throw-away free-tier account using an email alias address like <email+aws-i2@gmail.com> or similar for each account.
 
 ## Detailed Course Outline
 
