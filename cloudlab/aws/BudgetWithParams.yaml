@@ -4,11 +4,20 @@ Description: "Budget Alerts"
 Parameters:
   Email:
     Type: String
-    Default: email@example.com
+    Default: aws+alerts@yourdomain.com
     Description: Please enter the email address to which budget notifications should be addressed.
   BudgetAmount:
     Type: Number
+    Default: 10
     Description: The total budget amount per month. Do not include dollar sign.
+  LowThreshold:
+    Type: Number
+    Default: 50
+    Description: Enter a number for the low threshold budget notification.
+  HighThreshold:
+    Type: Number
+    Default: 80
+    Description: Enter a number for the high threshold budget notification.
 Resources:
   BudgetAlerts:
     Type: "AWS::Budgets::Budget"
@@ -23,14 +32,14 @@ Resources:
         - Notification:
             NotificationType: ACTUAL
             ComparisonOperator: GREATER_THAN
-            Threshold: 75
+            Threshold: !Ref LowThreshold
           Subscribers:
             - SubscriptionType: EMAIL
               Address: !Ref Email
         - Notification:
             NotificationType: ACTUAL
             ComparisonOperator: GREATER_THAN
-            Threshold: 50
+            Threshold: !Ref HighThreshold
           Subscribers:
           - SubscriptionType: EMAIL
             Address: !Ref Email

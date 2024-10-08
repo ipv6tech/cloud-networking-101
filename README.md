@@ -33,10 +33,14 @@ This full day workshop will be split into two section, a lecture portion and a h
 > [!NOTE]
 > Further requirements will be shared with participants ahead of the workshop.
 
-- Laptop
-- Access to <https://console.internet2.edu>
-- BYO Sandbox or Free-Tier accounts in each of the CSPs you wish to use in the hands-on workshop.
-_(As long as you delete the resources we build the cloud costs will be minimal for this workshop.)_
+- Laptop with Internet access
+- Access to Internet2's [Insight Console](https://console.internet2.edu/)
+- [Github account](https://github.com/) with access to Github Codespaces
+- An account in each of the Cloud Service Providers (CSPs) you wish to use in the hands-on workshop. _(As long as you delete the resources we build the cloud costs will be minimal for this workshop.)_
+  - [AWS Free Tier](https://aws.amazon.com/free)
+  - [Azure Free Services](https://azure.microsoft.com/en-us/pricing/free-services)
+  - [Google Cloud Tier](https://cloud.google.com/free)
+  - [Oracle Free Tier](https://www.oracle.com/cloud/free)
 
 > [!TIP]
 > Consider creating a throw-away free-tier account using an email alias address like <email+aws-i2@gmail.com> or similar for each account.
@@ -58,3 +62,12 @@ Google’s is a global resource - others are regional
 Subnets (Public vs Private)
 
 Google Subnet is a regional resource unlike the other CSP
+
+## Let's Get started
+
+Press the button below to get started with the lab
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ipv6tech/CloudNetworking101)
+
+1. Accept the defaults and let the new Codespace spin up, it's based on this repo and has the all the packages we need installed for our lab.
+2. 
