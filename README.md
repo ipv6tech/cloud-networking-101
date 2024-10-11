@@ -1,11 +1,14 @@
 
 # **Multicloud Networking 101:** _Networking to and inside the Cloud Service Providers_
 
+> [!NOTE]
+> **_This is a work in progress and not complete yet_**
+
 ## Abstract
 
-The Internet2 Team (Scott Taylor and others) will lead participants through a deep dive into cloud networking. As a participant, you will leave this workshop with knowledge of the necessary networking components to operate a functional cloud environment with dedicated cloud connectivity.
+This workshop will lead you through a deep dive into cloud networking. As a participant, you will leave this workshop with knowledge of the necessary networking components to operate a functional cloud environment with dedicated cloud connectivity.
 
-During the first half of the workshop, we will cover the following topics:
+The first half of the workshop will mostly be a lecture style workshop that covers the following topics:
 
 - Overview and benefits of Internet2’s Cloud Connect service
 - Tutorial on Internet2’s Insight Console used to build dedicated connections to the Cloud Service Providers
@@ -17,6 +20,8 @@ The second half of the workshop will allow participants to get hands-on with the
 
 This full day workshop will be split into two section, a lecture portion and a hands-on lab portion.
 
+It's helpful if you have some prior experience with Git, Github, Terraform, and Cloud Technology but it's not a requirement to learn and have fun with the hands-on lab.
+
 ### First Half
 
 1. Overview of Internet2 Cloud Connect
@@ -26,24 +31,7 @@ This full day workshop will be split into two section, a lecture portion and a h
 
 ### Second Half
 
-1. Hands-on workshop building hybrid and multicloud connectivity
-
-#### Requirements
-
-> [!NOTE]
-> Further requirements will be shared with participants ahead of the workshop.
-
-- Laptop with Internet access
-- Access to Internet2's [Insight Console](https://console.internet2.edu/)
-- [Github account](https://github.com/) with access to Github Codespaces
-- An account in each of the Cloud Service Providers (CSPs) you wish to use in the hands-on workshop. _(As long as you delete the resources we build the cloud costs will be minimal for this workshop.)_
-  - [AWS Free Tier](https://aws.amazon.com/free)
-  - [Azure Free Services](https://azure.microsoft.com/en-us/pricing/free-services)
-  - [Google Cloud Tier](https://cloud.google.com/free)
-  - [Oracle Free Tier](https://www.oracle.com/cloud/free)
-
-> [!TIP]
-> Consider creating a throw-away free-tier account using an email alias address like <email+aws-i2@gmail.com> or similar for each account.
+1. Hands-on workshop building and verifying hybrid and multicloud connectivity with Internet2 Cloud Connect and Internet2 Virtual Networks.
 
 ## Detailed Course Outline
 
@@ -63,11 +51,19 @@ Subnets (Public vs Private)
 
 Google Subnet is a regional resource unlike the other CSP
 
-## Let's Get started
+## Hands-on Lab
 
-Press the button below to get started with the lab
+Documentation on how to bootstrap the lab environment and complete the hands-on portion can be found here: [Multicloud Lab Deployment](cloudlab/lab-env.md).
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ipv6tech/CloudNetworking101)
+---
 
-1. Accept the defaults and let the new Codespace spin up, it's based on this repo and has the all the packages we need installed for our lab.
+### Further Learning
+
+1. [Getting Started With AWS Cloud | Step-by-Step Guide](https://youtu.be/CjKhQoYeR4Q?si=FUzdPFAMcd8KxRsR)
+2. [Azure Account Setup](https://youtu.be/ZYps6TmBkWk?si=zqWeeu1ab2tV7vui&t=60)
+3. [Google Cloud Account Setup]
+4. [Oracle Cloud Account Setup]
+
+Other Resources:
+1. I can recommend Andrew Brown's course over at [ExamPro](Exampro.co). Andrew has many free courses with short video that can help **git** you up to speed quickly.
 2. 
