@@ -10,6 +10,6 @@
     "ghcr.io/dhoeric/features/google-cloud-cli:1": {},
   },
   "postCreateCommand": {
-    "command": "mkdir -p ~/.ssh && cd ~/.ssh && ssh-keygen -f one-ring"
+    "command": "mkdir -p ~/.ssh && cd ~/.ssh && ssh-keygen -f one-ring -N ''"
   }
 }
