@@ -7,3 +7,4 @@ RUN apt-get update -y \
     gh \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
+RUN mkdir -p ~/.ssh && cd ~/.ssh && ssh-keygen -f one-ring

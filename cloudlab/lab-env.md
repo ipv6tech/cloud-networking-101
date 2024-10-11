@@ -23,29 +23,66 @@ The hand-on portion of the lab leverages some DevOps tooling with Terraform plan
 > [!WARNING]
 > Make sure you use complex passwords for your accounts and enable MFA. You don't need folks mining crypto on your dime.
 
-## Clone the CloudLab Repo and Launch in Codespaces
 
-1. Press this [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ipv6tech/CloudNetworking101) button to get started.
-
-2. Accept the defaults and let the new Codespace spin up, it's based on this repo and has the all the packages we need installed for our lab.
-
-> [!NOTE]
-> This lab will have you make modifications to the code in the repository in order to stand up your cloud environment(s). If you wish to save those modification you can commit those modifications and Codespaces will fork the original repository and save your modifications to a new repo in your account.
 
 ## Setup Codespaces Secrets
 
-Following these steps to setup Codespaces Secrets:
+For each CSP that you wish to work with we have some prep work we can do while we wait for codespaces to finish spinning up our devcontainer environment.
 
-1. Click on S
+We will need to create credentials for the CLI tools and terraform to create an environment.
 
+> [!NOTE]
+> In order to try to keep our environments secure we will use codespace secrets for private 
 
+> [!WARNING]
+> Avoid commiting your terraform stateThis repo uses a .gitignore file to try to keep 
 
+<details>
+<summary><b>Prepare AWS</b></summary>
 
+1. Login to your AWS account
+2. 
 
-Now that we have our Codespace linux container we can create a ssh key to use for the Linux lab machines in the CSPs.
+</details>
+
+<details>
+<summary><b>Prepare Azure</b></summary>
+
+</details>
+
+<details>
+<summary><b>Prepare Google Cloud</b></summary>
+
+</details>
+
+<details>
+<summary><b>Prepare Oracle Cloud</b></summary>
+
+</details>
+
+Once we have credentials for each CSP we wish to work with we can set those as secrets for our codespace environment to use. This will keep the credentials out of our repositories.
+
+Follow this **[how-to create codespaces secrets](https://docs.github.com/en/codespaces/managing-codespaces-for-your-organization/managing-development-environment-secrets-for-your-repository-or-organization#adding-secrets-for-a-repository)** for each of the private keys, passwords, etc for our CSP access. 
+
+## Open the CloudNetworking repo in codespaces
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ipv6tech/CloudNetworking101)
+
+1. Click the badge above to create a codespace for this repository and start the Multicloud Networking Lab.
+
+2. On the next page click `Create codespace`.
+
+This spins up a new codespace based on this repo and has the most of the packages we will want for our lab. It will take some time (maybe 5 minutes or more) for the devcontainer in codespaces to fully provision.
+
+> [!NOTE]
+> This lab will have you make modifications to the code in the repository in order to stand up your cloud environment(s). If you wish to save those modification you can commit those modifications and codespaces will fork the original repository under your account and save your modifications as a new commit.
+
+## Generate SSH Key for our lab instances (VMs)
+
+Now that we have our Codespace linux container we can create an ssh key to use for the virtual machines/instances we will build in the cloud.
+
 To generate an ssh key run the following and leave the passphrase empty.
 
 ```bash
-cd ~./ssh/
-ssh-keygen -f one-ring
+mkdir -p ~/.ssh && cd ~/.ssh && ssh-keygen -f one-ring
 ```

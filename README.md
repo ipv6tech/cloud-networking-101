@@ -1,5 +1,7 @@
 
-# **Multicloud Networking 101:** _Networking to and inside the Cloud Service Providers_
+# Multicloud Networking 101
+
+**_Networking to and inside the Cloud Service Providers_**
 
 > [!NOTE]
 > **_This is a work in progress and not complete yet_**
@@ -11,10 +13,12 @@ This workshop will lead you through a deep dive into cloud networking. As a part
 The first half of the workshop will mostly be a lecture style workshop that covers the following topics:
 
 - Overview and benefits of Internet2’s Cloud Connect service
-- Tutorial on Internet2’s Insight Console used to build dedicated connections to the Cloud Service Providers
-- Necessary networking components for each of the Cloud Service Providers.
+- Demo of Internet2’s [Insight Console](https://console.internet2.edu) used to build dedicated connections to the Cloud Service Providers
+- Overview of key networking components supporting dedicated connectivity for each of the Cloud Service Providers.
 
-The second half of the workshop will allow participants to get hands-on with their newly acquired knowledge and build connectivity to and inside the cloud service providers.
+The second half of the workshop will allow participants to get hands-on with their newly acquired knowledge and build, verify, and test connectivity to and inside their chosen cloud service providers.
+
+My recommendation is to focus on two providers and get those working before moving on to any additional providers.
 
 ## Workshop Outline
 
@@ -31,7 +35,7 @@ It's helpful if you have some prior experience with Git, Github, Terraform, and 
 
 ### Second Half
 
-1. Hands-on workshop building and verifying hybrid and multicloud connectivity with Internet2 Cloud Connect and Internet2 Virtual Networks.
+1. Hands-on tutorial building and verifying hybrid and multicloud connectivity with Internet2 Cloud Connect and Internet2 Virtual Networks.
 
 ## Detailed Course Outline
 
