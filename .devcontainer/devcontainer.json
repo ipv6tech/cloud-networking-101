@@ -11,5 +11,40 @@
   },
   "postCreateCommand": {
     "command": "mkdir -p ~/.ssh && cd ~/.ssh && ssh-keygen -f one-ring -N ''"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        // terraform tools
+        "hashicorp.terraform",
+        // AWS, Azure, Google Cloud, Oracle Cloud tools
+        "amazonwebservices.aws-toolkit-vscode",
+        "ms-azuretools.vscode-docker",
+        "googlecloudtools.cloudcode",
+        "oracle.oci-vscode-toolkit",
+        // diagram support
+        "hediet.vscode-drawio",
+        "pomdtr.excalidraw-editor",
+        // git tools
+        "mhutchie.git-graph",
+        "tomblind.scm-buttons-vscode",
+        // code spell checker
+        "streetsidesoftware.code-spell-checker",
+        // prettier for code formatting
+        "esbenp.prettier-vscode",
+        // pdf viewer
+        "tomoki1207.pdf",
+        // yaml
+        "redhat.vscode-yaml",
+        // markdown
+        "yzhang.markdown-all-in-one",
+        "DavidAnson.vscode-markdownlint",
+        // Material Icon Theme
+        "pkief.material-icon-theme",
+        // various extensions
+        "mutantdino.resourcemonitor",
+        "oderwat.indent-rainbow"
+        ]
+    }
   }
 }
