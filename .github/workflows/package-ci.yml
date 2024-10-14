@@ -1,0 +1,15 @@
+name: CloudLab container CI for GHCR
+
+on:
+  push
+
+jobs:
+  build_and_publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: build and push image
+        run: |
+          docker login --username ${{ secrets.GHCR_USERNAME }} --password ${{ secrets.GHCR_TOKEN }} ghcr.io
+          docker build . -t ghcr.io/ipv6tech/cloudlab:latest
+          docker push ghcr.io/ipv6tech/cloudlab:latest
