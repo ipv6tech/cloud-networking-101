@@ -1,4 +1,4 @@
-FROM debian:slim
+FROM debian:bookworm-slim
 LABEL maintainer="Scott Taylor <scott@ipv6tech.net>"
 RUN apt-get update -y \
     && apt-get install -y \
