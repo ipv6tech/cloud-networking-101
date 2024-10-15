@@ -1,6 +1,6 @@
 {
   "name": "CloudLab",
-  "image": "ghcr.io/ipv6tech/cloudlab:latest",
+  "image": "ghcr.io/ipv6tech/cloud-networking-101/cloudlab:latest",
 //  "build": {
 //    "dockerfile": "./Dockerfile"
 //  },
