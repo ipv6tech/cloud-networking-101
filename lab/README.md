@@ -1,31 +1,26 @@
 # Let's Get started
 
-The labs leverage some DevOps tooling with Terraform plans to build out basic environments for each CSP so we aren't spending out time together doing click-ops provision of a base environment. Specifically we will leverage Github Codespaces with a custom devcontainer to avoid spending time building out a development environment on your local machine.
+The labs leverage Github Codespaces with Terraform plans to build out basic environments for each CSP so we aren't spending out time together doing click-ops provision of a base environment. Specifically we will leverage Github Codespaces with a prebuilt, custom devcontainer to avoid spending time installing tools and configuring stuff on your laptop.
+
+Lab 1: Using Internet2 Insight Console
+
+Lab 2: Using Github Codespaces
+
+- Starting a new Codespace
+- Setting up the lab environment
+  - Setting secrets and environment variables
+  - Authenticating CLI tools with each CSP
+
+Lab 3: Terraform deployment of CSP Lab environments
+
+Lab 4: Building Dedicated Connections to the Cloud
+
+Lab 5:
 
 We will focus the lab work on playing with the networking components, configuring routing, and testing/verifying the connectivity we build in this lab.
 
 > [!NOTE]
 > It's possible to clone the [workshop repo](https://github.com/ipv6tech/CloudNetworking101) and bootstrap the cloud environments from your local device but that is out of scope for this workshop. The directions that follow assume you'll use Github Codespaces.
-
-## Requirements
-
-- Laptop with internet access.
-- Access to Internet2's [Insight Console](https://console.internet2.edu/). (Reach out if you can't login with your Institutions credentials.)
-- [Github account](https://github.com/) with access to Github Codespaces.
-- An account in each of the Cloud Service Providers (CSPs) you wish to use in the hands-on workshop. **_(As long as you delete the resources we build the cloud costs will be minimal for this workshop.)_**
-
-  - [AWS Free Tier](https://aws.amazon.com/free)
-  - [Azure Free Services](https://azure.microsoft.com/en-us/pricing/free-services)
-  - [Google Cloud Tier](https://cloud.google.com/free)
-  - [Oracle Free Tier](https://www.oracle.com/cloud/free)
-
-> [!TIP]
-> Consider creating a free-tier account using an email alias address, masked email or use plus addressing like `<email>+aws-training@gmail.com` for each account.
-
-> [!WARNING]
-> Make sure you use complex passwords for your accounts and enable MFA. You don't need folks mining crypto on your dime.
-
-
 
 ## Setup Codespaces Secrets
 

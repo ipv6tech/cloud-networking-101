@@ -3,75 +3,86 @@
 
 **_Networking to and inside the Cloud Service Providers_**
 
-> [!NOTE]
-> **_This is a work in progress and not complete yet_**
+[![Codespaces Prebuilds](https://github.com/ipv6tech/cloud-networking-101/actions/workflows/codespaces/create_codespaces_prebuilds/badge.svg)](https://github.com/ipv6tech/cloud-networking-101/actions/workflows/codespaces/create_codespaces_prebuilds)
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ipv6tech/cloud-networking-101)
+
+> [!CAUTION] Work in Progress
+> **_The slides and labs are a work in progress and not complete yet_**
 
 ## Abstract
 
-This workshop will lead you through a deep dive into cloud networking. As a participant, you will leave this workshop with knowledge of the necessary networking components to operate a functional cloud environment with dedicated cloud connectivity.
-
-This workshop will leverage lectures and labs covering the following topics:
-
-- Overview and benefits of Internet2’s Cloud Connect service
-- Demo of Internet2’s [Insight Console](https://console.internet2.edu) used to build dedicated connections to the Cloud Service Providers
-- Overview of key networking components supporting dedicated connectivity for each of the Cloud Service Providers.
-
-The labs will allow participants to get hands-on with their newly acquired knowledge and build, verify, and test connectivity to and inside their chosen cloud service providers.
-
-My recommendation is to focus on two providers and get those working before moving on to any additional providers.
+This full day workshop will lead you through a deep dive into cloud networking. As a participant, you will leave this workshop with knowledge of the necessary networking components required to operate a functional cloud environment with dedicated cloud connectivity. The workshop combines lectures with labs to provide hands-on experience with the course concepts.
 
 ## Workshop Outline
 
-This full day workshop will be split into two section, a lecture portion and a hands-on lab portion.
+This full day workshop combine lecture with hands-on labs.
 
-It's helpful if you have some prior experience with _GNU/Linux_, _Git_, _Github_, _Terraform_, and _Cloud Technology_ but it's not a requirement to learn and have fun with the labs.
+Some of the things you will learn during the workshop include
 
-**Morning**
+- Overview and benefits of Internet2’s Cloud Connect service
+- Use of Internet2’s [Insight Console](https://console.internet2.edu) used to build dedicated connections to the Cloud Service Providers (CSP's)
+- Networking components supporting dedicated connectivity for each of the Cloud Service Providers.
+- Establish dedicated connectivity and route traffic between multiple clouds.
 
-**Gather and Introductions:** 08:00-08:30
+It's helpful if you have some prior experience with _GNU/Linux_, [_Git_](https://gitimmersion.com/), _Github_, [_Terraform_](https://developer.hashicorp.com/terraform/tutorials), and _Cloud Technology_ but it's not a requirement to learn and have fun with the labs.
 
-**Lesson:** Overview of Internet2 Cloud Connect
-**Lesson:** Introduction to Insight Console
-**Lab:** Using Insight Console
-**Lesson:** Insight Console use cases
-**Lesson:** Networking in the Cloud(s)
-**Break** 09:30-10:00
-**Lesson:** Lab overview
-**Lab:** Setting up your lab environment
+**Morning** 08:00 - 11:30
 
-**Lunch** 11:30-13:00
+> - Gather and Introductions (30 minutes)
+> - Lesson: Overview of Internet2 Cloud Connect (20 minutes)
+> - Lesson: Introduction to Insight Console (20 minutes)
+> - Lab 1: Using Insight Console (10 minutes)
+> - Lesson: Insight Console use cases (10 minutes)
 
-**Afternoon**
-**Lesson:** More stuff
-**Lab:** Some lab
+**Break** 09:30 - 10:00
+
+> - Lesson: Lab overview (15 minutes)
+> - Lab 2: Setting up your lab environment (30 minutes)
+> - Lesson: Networking in the Cloud(s) (45 minutes)
+
+**Lunch** 11:30 - 13:00 _Included_ On-site
+
+**Afternoon** 13:00 - 16:30
+
+> - Lesson: Networking in the Cloud(s) continued...
+> - Lab 3: 
+
 **Break** 14:30-15:00
 
-1. Hands-on tutorial building and verifying hybrid and multicloud connectivity with Internet2 Cloud Connect and Internet2 Virtual Networks.
+> - Lab: More labs
+> - Close-out
 
-## Detailed Course Outline
+## Slides
 
-Compare Cloud Providers
+You can find the [slide deck for the lectures here](slides/cloud_networking_101-20241209.pptx)
 
-Cloud Resource (Hierarchy Slide)
+## Multicloud Networking Labs
 
-Understanding Regions, Zones (Comparison Slides)
+>[!NOTE]
+> As long as you clean up and delete the resources you build the cloud costs will be minimal for this workshop.
 
-Network components (comparison Slide)
+### Lab Requirements
 
-Virtual Data Center
+- Laptop with internet access.
+- Access to Internet2's [Insight Console](https://console.internet2.edu/).
+- [Github account](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github) with access to run Github Codespaces.
+- An account with each of the Cloud Service Providers (CSPs) you wish to use with the labs. 
 
-Google’s is a global resource - others are regional
+  - [AWS Free Tier](https://aws.amazon.com/free)
+  - [Azure Free Services](https://azure.microsoft.com/en-us/pricing/free-services)
+  - [Google Cloud Tier](https://cloud.google.com/free)
+  - [Oracle Free Tier](https://www.oracle.com/cloud/free)
 
-Subnets (Public vs Private)
+> [!TIP]
+> Consider creating a free-tier account using an email alias address, masked email or use plus addressing like `<email>+aws-training@gmail.com` for each account.
 
-Google Subnet is a regional resource unlike the other CSP
+> [!CAUTION]
+> Make sure you use complex passwords for your accounts and enable MFA. You don't need folks mining crypto on your dime.
 
-## Hands-on Lab
-
-Documentation on how to bootstrap the lab environment and complete the hands-on portion can be found here: [Multicloud Lab Deployment](lab/lab-env.md).
+:rocket: [Take me to the labs!](lab/README.md)
 
 ---
-
 ### Further Learning
 
 1. [Getting Started With AWS Cloud | Step-by-Step Guide](https://youtu.be/CjKhQoYeR4Q?si=FUzdPFAMcd8KxRsR)
@@ -80,11 +91,14 @@ Documentation on how to bootstrap the lab environment and complete the hands-on 
 4. [Oracle Cloud Account Setup]
 
 Other Resources:
-1. I can recommend Andrew Brown's course over at [ExamPro](Exampro.co). Andrew has many free courses with short video that can help **git** you up to speed quickly.
+
+- I can recommend Andrew Brown's course over at [ExamPro](Exampro.co). Andrew has many free courses with short video that can help **git** you up to speed quickly.
 
 ## TODO
 
-- [ ] IPv6 addressing
-- [ ] Lesson breakouts
+- [ ] [Maybe] Breakout slides for each lesson
+- [ ] Export slide deck to PDF
+- [ ] Finish Lab breakouts
 - [ ] Better Lab documentation
-- [ ] Lab solution sets
+- [ ] Lab solution branches
+- [ ] IPv6 addressing
