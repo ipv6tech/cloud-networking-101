@@ -1,7 +1,7 @@
 {
   "name": "CloudLab",
   "build": { "dockerfile": "Dockerfile" },
-  "postCreateCommand": "sh .devcontainer/postCreate.sh",
+  "postCreateCommand": "sh .devcontainer/PostCreate.sh",
   "customizations": {
     "vscode": {
       "extensions": [
