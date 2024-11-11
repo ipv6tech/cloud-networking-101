@@ -1,0 +1,27 @@
+{
+  "name": "CloudLab",
+  "build": { "dockerfile": "Dockerfile" },
+  "postCreateCommand": "sh .devcontainer/postCreate.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        //        "amazonwebservices.aws-toolkit-vscode",
+        //        "ms-vscode.azure-account",
+        //        "oci-tools.oci-toolkit",
+        //        "gcloud.google-cloud-sdk",
+        "4ops.terraform",
+        //        "gamunu.opentofu",
+        "hediet.vscode-drawio",
+        "mhutchie.git-graph",
+        "tomblind.scm-buttons-vscode",
+        "streetsidesoftware.code-spell-checker",
+        "esbenp.prettier-vscode",
+        "redhat.vscode-yaml",
+        "yzhang.markdown-all-in-one",
+        "DavidAnson.vscode-markdownlint",
+        "mutantdino.resourcemonitor",
+        "oderwat.indent-rainbow"
+      ]
+    }
+  }
+}
