@@ -1,31 +1,24 @@
-
 # Multicloud Networking 101
 
 **_Networking to and inside the Cloud Service Providers_**
 
-[![Codespaces Prebuilds](https://github.com/ipv6tech/cloud-networking-101/actions/workflows/codespaces/create_codespaces_prebuilds/badge.svg)](https://github.com/ipv6tech/cloud-networking-101/actions/workflows/codespaces/create_codespaces_prebuilds)
+>[!CAUTION] Work in Progress
+>**_The slides and labs are a work in progress and not complete yet_**
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/ipv6tech/cloud-networking-101)
-
-> [!CAUTION] Work in Progress
-> **_The slides and labs are a work in progress and not complete yet_**
-
-## Abstract
+## Workshop Objectives
 
 This full day workshop will lead you through a deep dive into cloud networking. As a participant, you will leave this workshop with knowledge of the necessary networking components required to operate a functional cloud environment with dedicated cloud connectivity. The workshop combines lectures with labs to provide hands-on experience with the course concepts.
-
-## Workshop Outline
 
 This full day workshop combine lecture with hands-on labs.
 
 Some of the things you will learn during the workshop include
 
 - Overview and benefits of Internet2’s Cloud Connect service
-- Use of Internet2’s [Insight Console](https://console.internet2.edu) used to build dedicated connections to the Cloud Service Providers (CSP's)
+- Use of Internet2 [Insight Console](https://console.internet2.edu) used to build dedicated connections to the Cloud Service Providers (CSP's)
 - Networking components supporting dedicated connectivity for each of the Cloud Service Providers.
 - Establish dedicated connectivity and route traffic between multiple clouds.
 
-It's helpful if you have some prior experience with _GNU/Linux_, [_Git_](https://gitimmersion.com/), _Github_, [_Terraform_](https://developer.hashicorp.com/terraform/tutorials), and _Cloud Technology_ but it's not a requirement to learn and have fun with the labs.
+## Agenda
 
 **Morning** 08:00 - 11:30
 
@@ -57,42 +50,61 @@ It's helpful if you have some prior experience with _GNU/Linux_, [_Git_](https:/
 
 You can find the [slide deck for the lectures here](slides/cloud_networking_101-20241209.pptx)
 
-## Multicloud Networking Labs
+## Labs
 
 >[!NOTE]
 > As long as you clean up and delete the resources you build the cloud costs will be minimal for this workshop.
 
 ### Lab Requirements
 
+It's helpful if you have some prior experience with _GNU/Linux_, [_Git_](https://gitimmersion.com/), _GitHub_, [_Terraform_](https://developer.hashicorp.com/terraform/tutorials), and _Cloud Technology_ but it's not a prerequisite to learn and have fun with the labs.
+
 - Laptop with internet access.
 - Access to Internet2's [Insight Console](https://console.internet2.edu/).
-- [Github account](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github) with access to run Github Codespaces.
-- An account with each of the Cloud Service Providers (CSPs) you wish to use with the labs. 
+- [GitHub account](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github) with access to run GitHub Codespaces.
+- An account with each of the Cloud Service Providers (CSPs) you wish to use with the labs.
 
-  - [AWS Free Tier](https://aws.amazon.com/free)
-  - [Azure Free Services](https://azure.microsoft.com/en-us/pricing/free-services)
-  - [Google Cloud Tier](https://cloud.google.com/free)
-  - [Oracle Free Tier](https://www.oracle.com/cloud/free)
+>[!TIP]
+>I strongly recommend for this lab you use a personal **free tier account** so you don't run into policy/permission issues with a restricted account from your institution.
+>
+>Consider creating a free-tier account using an email alias address, masked email or use plus addressing like `<email>+aws-training@gmail.com` for each account.
 
-> [!TIP]
-> Consider creating a free-tier account using an email alias address, masked email or use plus addressing like `<email>+aws-training@gmail.com` for each account.
+### Free Tier Services
 
-> [!CAUTION]
-> Make sure you use complex passwords for your accounts and enable MFA. You don't need folks mining crypto on your dime.
+As you build out your Free Tier accounts keep in mind that the terraform code for the Cloud Service Provider (lab) environments and the GitHub Codespaces are preconfigured to run in the US-East regions. If you are able to use those regions for this workshop it should simplify things.
 
-:rocket: [Take me to the labs!](lab/README.md)
+
+> - [AWS Free Tier](https://aws.amazon.com/free)
+> - [Azure Free Services](https://azure.microsoft.com/en-us/pricing/free-services)
+> - [Google Cloud Tier](https://cloud.google.com/free)
+> - [Oracle Free Tier](https://www.oracle.com/cloud/free)
+>
+> _If you need help getting the free tier accounts setup, see the [Further Learning](#further-learning) resources below._ :arrow_down:
+
+## :rocket: [Take me to the labs!](lab/README.md)
 
 ---
+---
+
 ### Further Learning
+
+#### Free Tier Account Creation
 
 1. [Getting Started With AWS Cloud | Step-by-Step Guide](https://youtu.be/CjKhQoYeR4Q?si=FUzdPFAMcd8KxRsR)
 2. [Azure Account Setup](https://youtu.be/ZYps6TmBkWk?si=zqWeeu1ab2tV7vui&t=60)
-3. [Google Cloud Account Setup]
-4. [Oracle Cloud Account Setup]
+3. [Google Cloud Account, Organization, Project Setup](https://youtu.be/qofqzJbqD3s?si=GSgZ4ngMp7ZOi9nh&t=108)
+4. [Oracle Cloud Account Setup](https://www.youtube.com/watch?v=YnsN52hB8EY)
 
-Other Resources:
+#### Terraform
 
-- I can recommend Andrew Brown's course over at [ExamPro](Exampro.co). Andrew has many free courses with short video that can help **git** you up to speed quickly.
+1. [Terraform tutorials](https://developer.hashicorp.com/terraform/tutorials)
+
+#### Git & GitHub
+
+1. [Git Immersion](https://gitimmersion.com/)
+2. [GitHub Training with Andrew Brown](https://www.exampro.co/github-foundations) (_Free limited version of the course available_)
+
+---
 
 ## TODO
 
@@ -102,3 +114,4 @@ Other Resources:
 - [ ] Better Lab documentation
 - [ ] Lab solution branches
 - [ ] IPv6 addressing
+- [ ] Refactor code to make it easier to switch regions
