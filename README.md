@@ -115,8 +115,9 @@ As you build out your Free Tier accounts keep in mind that the terraform code fo
 - [ ] Export slide deck to PDF
 - [ ] [Maybe] Breakout slides for each lesson
 - [ ] [Future] Lab solution branches
-- [ ] [Future]IPv6 addressing
-- [ ] [Future]Refactor code to make it easier to switch regions
+- [ ] [Future] IPv6 addressing
+- [ ] [Future] Refactor code to make it easier to switch regions
+- [ ] [Future] Migrate code to OpenTofu
 
 ---
 
