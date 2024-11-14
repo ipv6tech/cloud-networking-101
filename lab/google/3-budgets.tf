@@ -18,7 +18,7 @@
     }
 
     all_updates_rule {
-        pubsub_topic = "projects/${var.project_id}/topics/your-topic"
+        pubsub_topic = "projects/${var.GC_PROJECT_ID}/topics/your-topic"
         schema_version = "1.0"
     }
 }

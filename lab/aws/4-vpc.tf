@@ -1,33 +1,33 @@
 # VPC for lab environment named i2lab
 resource "aws_vpc" "i2lab" {
-  cidr_block           = var.vpc_cidr_block
+  cidr_block           = var.VPC_CIDR_BLOCK
   enable_dns_support   = true
   enable_dns_hostnames = true
   tags = {
-    Name        = "vpc-${var.env}"
-    environment = "${var.env}"
+    Name        = "vpc-${var.ENV}"
+    environment = "${var.ENV}"
   }
 }
 
 # Public subnet for VPC
 resource "aws_subnet" "public" {
-  cidr_block = var.public_subnet_cidr_block
+  cidr_block = var.PUBLIC_SUBNET_CIDR_BLOCK
   vpc_id     = aws_vpc.i2lab.id
-  availability_zone = var.availability_zone
+  availability_zone = var.AVAILABILITY_ZONE
   tags = {
-    Name        = "public-${var.env}"
-    environment = "${var.env}"
+    Name        = "public-${var.ENV}"
+    environment = "${var.ENV}"
   }
 }
 
 # TGW subnet for attachments
 resource "aws_subnet" "tgw" {
-  cidr_block = var.tgw_subnet_cidr_block
+  cidr_block = var.TGW_SUBNET_CIDR_BLOCK
   vpc_id     = aws_vpc.i2lab.id
-  availability_zone = var.availability_zone
+  availability_zone = var.AVAILABILITY_ZONE
   tags = {
-    Name        = "tgw-${var.env}"
-    environment = "${var.env}"
+    Name        = "tgw-${var.ENV}"
+    environment = "${var.ENV}"
   }
 }
 
@@ -39,8 +39,8 @@ resource "aws_route_table" "public" {
     gateway_id = aws_internet_gateway.igw_i2lab.id
   }
   tags = {
-    Name        = "public-${var.env}"
-    environment = "${var.env}"
+    Name        = "public-${var.ENV}"
+    environment = "${var.ENV}"
   }
 }
 

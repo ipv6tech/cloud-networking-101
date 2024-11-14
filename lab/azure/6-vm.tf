@@ -23,14 +23,14 @@ resource "azurerm_virtual_machine" "i2lab-vm" {
   os_profile {
     computer_name  = "i2lab-vm"
     admin_username = "admin"
-    admin_password = var.admin_password
+    admin_password = var.AZ_ADMIN_PASSWORD
   }
 
   os_profile_linux_config {
     disable_password_authentication = true
     ssh_keys {
       path     = "/home/admin/.ssh/authorized_keys"
-      key_data = var.public_key
+      key_data = var.PUBLIC_KEY
     }
   }
 }

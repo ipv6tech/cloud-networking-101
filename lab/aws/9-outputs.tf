@@ -16,3 +16,7 @@ output "public_ip" {
 output "budget_id" {
   value = aws_budgets_budget.budget_alerts.id
 }
+# output ssh command to connect to i2lab instance
+output "ssh_command" {
+  value = "ssh -i ${var.PRIVATE_KEY} admin@${aws_instance.i2lab.public_ip}"
+}

@@ -6,8 +6,8 @@ resource "aws_ec2_transit_gateway" "tgw" {
   auto_accept_shared_attachments  = "enable"
   amazon_side_asn                 = "65010"
   tags = {
-    Name        = "tgw_${var.env}"
-    environment = "${var.env}"
+    Name        = "tgw_${var.ENV}"
+    environment = "${var.ENV}"
   }
 }
 
@@ -15,8 +15,8 @@ resource "aws_ec2_transit_gateway" "tgw" {
 resource "aws_ec2_transit_gateway_route_table" "i2lab" {
   transit_gateway_id = aws_ec2_transit_gateway.tgw.id
   tags = {
-    Name        = "tgw_rt_${var.env}"
-    environment = "${var.env}"
+    Name        = "tgw_rt_${var.ENV}"
+    environment = "${var.ENV}"
   }
 }
 
@@ -28,8 +28,8 @@ resource "aws_ec2_transit_gateway_vpc_attachment" "att-i2lab" {
   transit_gateway_id = aws_ec2_transit_gateway.tgw-i2lab.id
   vpc_id             = aws_vpc.i2lab.id
   tags = {
-    Name        = "att-${var.env}"
-    environment = "${var.env}"
+    Name        = "att-${var.ENV}"
+    environment = "${var.ENV}"
   }
 } */
 

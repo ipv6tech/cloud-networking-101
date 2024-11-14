@@ -130,17 +130,15 @@ In the new project you created you likely have a default VPC Network. Let's go a
 <details>
 <summary><b>Prepare Oracle Cloud</b></summary>
 
-**1. Copy the public key.**
-In a Codespaces shell, run `cat ~/.oci/oci_key_public.pem`.
+#### Create API keys and collect environment variables
 
-**2. Add the public key to your user account.**
-In the OCI Console's top navigation bar, click the "My profile" menu, and then go to User settings.
-
-- Click API Keys.
-- Click Add API Key.
-- Select Paste Public Keys.
-- Paste value from previous step, including the lines with BEGIN PUBLIC KEY and END PUBLIC KEY.
-- Click Add.
+1. Copy the oci public key, in a Codespaces shell, run `cat ~/.oci/oci_key_public.pem`.
+2. In the OCI Console navigation to [My profile](https://cloud.oracle.com/identity/domains/my-profile).
+3. Under the Resources section on the bottom left select `API Keys`.
+4. Select `Add API Key`.
+5. Select `Paste Public Keys`.
+6. Paste the output from step #1, including the lines with BEGIN PUBLIC KEY and END PUBLIC KEY.
+7. Select `Add`.
 
 **3. Prepare the information you need to authenticate for OCI.**
 

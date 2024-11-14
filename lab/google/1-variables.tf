@@ -1,56 +1,56 @@
 # Variables (Customize these as needed)
-variable "env" {
+variable "ENV" {
   type    = string
   default = "i2lab"
 }
-variable "gc_project_id" {
+variable "GC_PROJECT_ID" {
   type    = string
 }
-variable "gc_region" {
+variable "GC_REGION" {
   type    = string
   default = "us-east4"
 }
-variable "gc_zone" {
+variable "GC_ZONE" {
   type    = string
   default = "us-east4-a"
 }
-variable "machine_type" {
+variable "MACHINE_TYPE" {
   type    = string
   default = "f1-micro"
 }
-variable "image" {
+variable "IMAGE" {
   type    = string
   default = "debian-cloud/debian-12"
 }
-variable "subnet_ip_cidr_range" {
+variable "SUBNET_IP_CIDR_RANGE" {
   type    = string
   default = "10.208.1.0/24"
 }
-/*variable "vpc_cidr" {
+/*variable "VPC_CIDR" {
   type    = string
   default = "10.208.0.0/16"
 }*/
-variable "public_key" {
+variable "PUBLIC_KEY" {
   type    = string
   default = "~/.ssh/one-ring.pub"
 }
-variable "private_key" {
+variable "PRIVATE_KEY" {
   type    = string
   default = "~/.ssh/one-ring"
 }
-variable "ssh_user" {
+variable "SSH_USER" {
   type    = string
   default = "admin"
 }
-variable "cr_asn" {
+variable "CR_ASN" {
   type    = number
   default = "16550"
 }
-variable "i2cc_asn" {
+variable "I2CC_ASN" {
   type    = number
   default = "55038"
 }
-variable "cr_peer_ip" {
+variable "CR_PEER_IP" {
   type    = string
   default = "10.208.0.1/30"
 }

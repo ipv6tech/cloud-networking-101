@@ -8,7 +8,7 @@ output "i2lab_private_ip" {
 }
 # output ssh command to connect to i2lab instance
 output "ssh_command" {
-  value = "ssh -i ${var.private_key} admin@${oci_core_instance.i2lab.public_ip}"
+  value = "ssh -i ${var.PRIVATE_KEY} ubuntu@${oci_core_instance.i2lab.public_ip}"
 }
 #output the availability domains
 output "availability_domains" {

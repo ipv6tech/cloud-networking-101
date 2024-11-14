@@ -9,7 +9,7 @@ terraform {
 }
 provider "google" {
 #  credentials = file("~/.config/gcloud/application_default_credentials.json")
-  project     = var.gc_project_id
-  region      = var.gc_region
-  zone        = var.gc_zone
+  project     = var.GC_PROJECT_ID
+  region      = var.GC_REGION
+  zone        = var.GC_ZONE
 }

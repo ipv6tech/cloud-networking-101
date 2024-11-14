@@ -1,6 +1,6 @@
 # Firewall rule to allow SSH to the VM in the private subnet
 resource "google_compute_firewall" "allow_from_internet" {
-  project = var.gc_project_id
+  project = var.GC_PROJECT_ID
   name    = "allow-from-internet"
   network = google_compute_network.main.name
   allow {
@@ -15,10 +15,10 @@ resource "google_compute_firewall" "allow_from_internet" {
 
 # Small VM Instance in the Private Subnet
 resource "google_compute_instance" "vm" {
-  project      = var.gc_project_id
-  name         = "${var.env}-gcloud"
-  zone         = var.gc_zone
-  machine_type = var.machine_type
+  project      = var.GC_PROJECT_ID
+  name         = "${var.ENV}-gcloud"
+  zone         = var.GC_ZONE
+  machine_type = var.MACHINE_TYPE
   network_interface {
     subnetwork = google_compute_subnetwork.public.id
     access_config {
@@ -27,19 +27,19 @@ resource "google_compute_instance" "vm" {
   }
   //metadata_startup_script = file("files/startup.sh")
   metadata = {
-    ssh-keys = "${var.ssh_user}:${file(var.public_key)}"
+    ssh-keys = "${var.SSH_USER}:${file(var.PUBLIC_KEY)}"
   }
   boot_disk {
     initialize_params {
-      image = var.image
+      image = var.IMAGE
     }
   }
   provisioner "local-exec" {
     command = templatefile("files/linux-ssh-config.tpl", {
-      host         = "${var.env}-gcloud"
+      host         = "${var.ENV}-gcloud"
       hostname     = self.network_interface[0].access_config[0].nat_ip
       user         = "admin"
-      identityfile = var.private_key
+      identityfile = var.PRIVATE_KEY
     })
   }
 }

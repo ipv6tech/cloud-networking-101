@@ -28,14 +28,6 @@ resource "azurerm_consumption_budget_resource_group" "i2lab" {
         azurerm_monitor_action_group.i2lab.id,
       ]
     }
-
-    tag {
-      name = "foo"
-      values = [
-        "bar",
-        "baz",
-      ]
-    }
   }
 
   notification {
@@ -44,7 +36,7 @@ resource "azurerm_consumption_budget_resource_group" "i2lab" {
     operator       = "EqualTo"
     threshold_type = "Forecasted"
 
-    contact_emails = [var.email]
+    contact_emails = [var.EMAIL]
 
     contact_groups = [
       azurerm_monitor_action_group.i2lab.id,
@@ -60,6 +52,6 @@ resource "azurerm_consumption_budget_resource_group" "i2lab" {
     threshold = 100.0
     operator  = "GreaterThan"
 
-    contact_emails = [var.email]
+    contact_emails = [var.EMAIL]
   }
 }

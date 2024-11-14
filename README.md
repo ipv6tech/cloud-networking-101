@@ -3,7 +3,7 @@
 **_Networking to and inside the Cloud Service Providers_**
 
 >[!CAUTION]
->**_The slides and labs are a work in progress and not complete yet_**
+>_This repository is still a work in progress._
 
 ## Workshop Objectives
 

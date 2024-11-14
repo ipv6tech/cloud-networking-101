@@ -3,46 +3,46 @@
 #############################################################################################
 
 # set the environment name
-variable "env" {
+variable "ENV" {
   description = "Environment name"
   type        = string
   default     = "i2lab"
 }
 
 # set local host OS to `linux` or `windows`- used for ssh-config generation and other functions
-variable "host_os" {
+variable "HOST_OS" {
   description = "local host OS type"
   type        = string
   default     = "linux" // Use "linux" for unix based OS (including MacOS), use "windows" for windows host OS
 }
 
 # set AWS region
-variable "region" {
+variable "AWS_REGION" {
   description = "AWS region"
   type        = string
   default     = "us-east-1" //change to region you wish to test in
 }
 
 # set availability zone
-variable "availability_zone" {
+variable "AVAILABILITY_ZONE" {
   description = "AWS availability zone"
   type        = string
   default     = "us-east-1a" //change to match the region you are testing in
 }
 
 # set instance type
-variable "instance_type" {
+variable "INSTANCE_TYPE" {
   description = "Type of AWS instance to deploy"
   type        = string
   default     = "t2.micro" # use t2.micro if you are "free tier eligible" otherwise t3.nano is less expensive
 }
 # set ssh key name and location
-variable "public_key" {
+variable "PUBLIC_KEY" {
   description = "Path to public key"
   type        = string
   default     = "~/.ssh/one-ring.pub" // one ring to rule them all! change to match your key name and location
 }
-variable "private_key" {
+variable "PRIVATE_KEY" {
   description = "Path to private key"
   type        = string
   default     = "~/.ssh/one-ring" // change to match your key name and location
@@ -53,20 +53,20 @@ variable "private_key" {
 #####################
 
 #set vpc cidr block
-variable "vpc_cidr_block" {
+variable "VPC_CIDR_BLOCK" {
   description = "CIDR block for Test VPC"
   type        = string
   default     = "10.192.0.0/16" //change if you need/want your VPC to have a different CIDR block
 }
 
 # set public subnet block
-variable "public_subnet_cidr_block" {
+variable "PUBLIC_SUBNET_CIDR_BLOCK" {
   description = "CIDR block for Public Subnet"
   type        = string
   default     = "10.192.1.0/24" //change to give the test VPC a different CIDR block
 }
 # set tgw subnet block
-variable "tgw_subnet_cidr_block" {
+variable "TGW_SUBNET_CIDR_BLOCK" {
   description = "CIDR block for TGW Subnet"
   type        = string
   default     = "10.192.0.240/28" //change to give the test VPC a different CIDR block
@@ -106,25 +106,24 @@ variable "i2cr_primary_address" {
 */
 
 # Variables for budget alerts
-variable "email" {
+variable "EMAIL" {
   description = "Please enter the email address to which budget notifications should be addressed."
   type        = string
-  default     = "aws+alerts@yourdomain.com" # Change to your email address
 }
 
-variable "budget_amount" {
+variable "BUDGET_AMOUNT" {
   description = "The total budget amount (USD) per month. Do not include dollar sign."
   type        = number
   default     = 10
 }
 
-variable "low_threshold" {
+variable "LOW_THRESHOLD" {
   description = "Enter a number for the low threshold budget notification."
   type        = number
   default     = 50
 }
 
-variable "high_threshold" {
+variable "HIGH_THRESHOLD" {
   description = "Enter a number for the high threshold budget notification."
   type        = number
   default     = 80

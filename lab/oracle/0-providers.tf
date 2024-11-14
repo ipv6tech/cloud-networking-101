@@ -8,9 +8,9 @@ terraform {
 }
 
 provider "oci" {
-  tenancy_ocid = var.oci_tenancy
-  user_ocid = var.oci_user
-  fingerprint = var.oci_fingerprint
-  private_key_path = var.oci_private_key_file
-  region = var.oci_region
+  tenancy_ocid = var.OCI_TENANCY
+  user_ocid = var.OCI_USER
+  fingerprint = var.OCI_FINGERPRINT
+  private_key_path = var.OCI_PRIVATE_KEY_FILE
+  region = var.OCI_REGION
 }

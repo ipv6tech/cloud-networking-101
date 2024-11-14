@@ -1,12 +1,12 @@
 resource "oci_core_vcn" "vcn_i2lab" {
-  cidr_block     = var.vcn_cidr
+  cidr_block     = var.VCN_CIDR
   display_name   = "i2lab"
   compartment_id = oci_identity_compartment.i2lab.id
   dns_label      = "i2lab"
 }
 
 resource "oci_core_subnet" "public" {
-  cidr_block                 = var.subnet_cidr
+  cidr_block                 = var.SUBNET_CIDR
   display_name               = "public"
   compartment_id             = oci_identity_compartment.i2lab.id
   vcn_id                     = oci_core_vcn.vcn_i2lab.id

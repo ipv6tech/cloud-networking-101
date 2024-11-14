@@ -1,16 +1,14 @@
-
 # Create a resource group
 resource "azurerm_resource_group" "i2lab-rg" {
   name     = "i2lab-rg"
-  location = var.location
+  location = var.AZ_LOCATION
 }
 
 # Create a virtual network
 resource "azurerm_virtual_network" "i2lab_vnet" {
   name          = "i2lab-vnet"
   address_space = ["10.200.0.0/16"]
-  //  location            = azurerm_resource_group.i2lab-rg.location
-  location            = var.location
+  location            = var.AZ_LOCATION
   resource_group_name = azurerm_resource_group.i2lab-rg.name
 }
 
@@ -19,7 +17,7 @@ resource "azurerm_subnet" "i2lab-public" {
   name                 = "i2lab-public"
   resource_group_name  = azurerm_resource_group.i2lab-rg.name
   virtual_network_name = azurerm_virtual_network.i2lab_vnet.name
-  address_prefixes     = ["10.200.1.0/24"]
+  address_prefixes     = [var.PUBLIC_SUBNET_CIDR_BLOCK]
 }
 
 # Create a gw-subnet for vng
@@ -27,7 +25,7 @@ resource "azurerm_subnet" "gw-subnet" {
   name                 = "GatewaySubnet"
   resource_group_name  = azurerm_resource_group.i2lab-rg.name
   virtual_network_name = azurerm_virtual_network.i2lab_vnet.name
-  address_prefixes     = ["10.200.0.224/27"]
+  address_prefixes     = [var.VNG_SUBNET_CIDR_BLOCK]
 }
 
 # Create a network security group
