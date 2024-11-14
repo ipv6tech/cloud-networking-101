@@ -3,37 +3,33 @@ variable "env"{
   type        = string
   default     = "i2lab"
 }
-variable "tenancy_ocid" {
+variable "oci_tenancy" {
   description = "The OCID of your tenancy"
   type        = string
-  default     = "ocid1.tenancy.oc1..aaaaaaaa3j"
 }
-variable "user_ocid" {
+variable "oci_user" {
   description = "The OCID of your user"
   type        = string
-  default     = "ocid1.user.oc1..aaaaaaaa3j"
 }
-variable "region" {
+variable "oci_region" {
   description = "The region where the resources will be created"
   type        = string
   default     = "us-ashburn-1"
 }
-variable "compartment_ocid" {
+variable "oci_compartment" {
   description = "The OCID of the compartment where the resources will be created"
   type = string
-  default = "ocid1.compartment.oc1..aaaaaaaa3j"
 }
 
-variable "api_private_key_file" {
+variable "oci_private_key_file" {
   description = "The path to the api private key"
   type        = string
   default     = "~/.oci/oci_key.pem"
 }
 
-variable "api_public_key_fingerprint" {
+variable "oci_fingerprint" {
   description = "The fingerprint of the api public key"
   type        = string
-  default     = "aa:bb:cc:dd:ee:ff:gg:hh:ii:jj:kk:ll:mm:nn:oo:pp"
 }
 
 # VM shape

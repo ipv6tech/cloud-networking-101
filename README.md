@@ -2,7 +2,7 @@
 
 **_Networking to and inside the Cloud Service Providers_**
 
->[!CAUTION] Work in Progress
+>[!CAUTION]
 >**_The slides and labs are a work in progress and not complete yet_**
 
 ## Workshop Objectives
@@ -34,16 +34,18 @@ Some of the things you will learn during the workshop include
 > - Lab 2: Setting up your lab environment (30 minutes)
 > - Lesson: Networking in the Cloud(s) (45 minutes)
 
-**Lunch** 11:30 - 13:00 _Included_ On-site
+**Lunch** 11:30 - 13:00
+
+> _Included_ On-site
 
 **Afternoon** 13:00 - 16:30
 
 > - Lesson: Networking in the Cloud(s) continued...
-> - Lab 3: 
+> - Lab 3: ...
 
 **Break** 14:30-15:00
 
-> - Lab: More labs
+> - Labs 4-7
 > - Close-out
 
 ## Slides
@@ -108,10 +110,16 @@ As you build out your Free Tier accounts keep in mind that the terraform code fo
 
 ## TODO
 
-- [ ] [Maybe] Breakout slides for each lesson
+- [ ] Fix Azure VM creation which isn't working
+- [ ] Finish Lab breakouts and documentation
 - [ ] Export slide deck to PDF
-- [ ] Finish Lab breakouts
-- [ ] Better Lab documentation
-- [ ] Lab solution branches
-- [ ] IPv6 addressing
-- [ ] Refactor code to make it easier to switch regions
+- [ ] [Maybe] Breakout slides for each lesson
+- [ ] [Future] Lab solution branches
+- [ ] [Future]IPv6 addressing
+- [ ] [Future]Refactor code to make it easier to switch regions
+
+---
+
+## Notes
+
+**Google:** Before the workshop it would be helpful if you have your account setup, billing setup, a project for us to build into and Compute API enabled for the project. Send directions for these step to the participants ahead of the workshop.

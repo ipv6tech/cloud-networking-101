@@ -1,6 +1,6 @@
 # Firewall rule to allow SSH to the VM in the private subnet
 resource "google_compute_firewall" "allow_from_internet" {
-  project = var.project_id
+  project = var.gc_project_id
   name    = "allow-from-internet"
   network = google_compute_network.main.name
   allow {
@@ -15,9 +15,9 @@ resource "google_compute_firewall" "allow_from_internet" {
 
 # Small VM Instance in the Private Subnet
 resource "google_compute_instance" "vm" {
-  project      = var.project_id
+  project      = var.gc_project_id
   name         = "${var.env}-gcloud"
-  zone         = var.zone
+  zone         = var.gc_zone
   machine_type = var.machine_type
   network_interface {
     subnetwork = google_compute_subnetwork.public.id

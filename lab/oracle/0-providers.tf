@@ -8,10 +8,9 @@ terraform {
 }
 
 provider "oci" {
-  tenancy_ocid = var.tenancy_ocid
-  user_ocid = var.user_ocid
-  fingerprint = var.api_public_key_fingerprint
-//  private_key_path = pathexpand(var.api_private_key_file)
-  private_key_path = var.api_private_key_file
-  region = var.region
+  tenancy_ocid = var.oci_tenancy
+  user_ocid = var.oci_user
+  fingerprint = var.oci_fingerprint
+  private_key_path = var.oci_private_key_file
+  region = var.oci_region
 }

@@ -1,5 +1,5 @@
 resource "oci_core_instance" "i2lab" {
-  compartment_id      = var.compartment_ocid
+  compartment_id      = var.oci_compartment
   availability_domain = data.oci_identity_availability_domains.ADs.availability_domains[0].name
   shape               = var.vm_shape
   display_name        = "i2lab-oci"

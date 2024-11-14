@@ -1,8 +1,8 @@
 # Cloud Router for NAT and Partner Interconnect
 resource "google_compute_router" "default" {
-  project = var.project_id
+  project = var.gc_project_id
   name    = "cr-${var.env}"
-  region  = var.region
+  region  = var.gc_region
   network = google_compute_network.main.id
   bgp {
     asn = var.cr_asn

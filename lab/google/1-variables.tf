@@ -3,15 +3,14 @@ variable "env" {
   type    = string
   default = "i2lab"
 }
-variable "project_id" {
+variable "gc_project_id" {
   type    = string
-  default = "i2lab-440216"
 }
-variable "region" {
+variable "gc_region" {
   type    = string
   default = "us-east4"
 }
-variable "zone" {
+variable "gc_zone" {
   type    = string
   default = "us-east4-a"
 }
