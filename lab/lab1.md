@@ -1,5 +1,13 @@
 # Lab 1: Setup Internet2 Insight Console
 
+## Objective
+
+The first lab will build out a Virtual Router for Layer 3 connectivity between two or more Cloud Service Providers.
+
+- [Signing in](#signing-in)
+- [Create a new Virtual Network Space (VNS)](#create-a-new-virtual-network-space-vns)
+- [Create a Virtual Router](#create-a-virtual-router)
+
 ## Signing in
 
 Let's get signed in!
@@ -31,8 +39,8 @@ Adding a new Virtual Device to a Virtual Network Space.
 2. _(Optional)_ Add any notes you'd like about the virtual router.
 3. Select `Save`.
 
-At this point the Internet2 Virtual Network and Virtual Router is built and ready for us to start building dedicated cloud connectivity. In the next Lab we will prepare our GitHub Codespaces for provisioning base cloud resources.
-
 ---
+
+At this point the Internet2 Virtual Network and Virtual Router is built and ready for us to start building dedicated cloud connectivity. In the next Lab we will prepare our GitHub Codespaces for provisioning base cloud resources.
 
 ## :rocket: [Go to Lab 2](lab2.md)

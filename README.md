@@ -104,7 +104,8 @@ As you build out your Free Tier accounts keep in mind that the terraform code fo
 #### Git & GitHub
 
 1. [Git Immersion](https://gitimmersion.com/)
-2. [GitHub Training with Andrew Brown](https://www.exampro.co/github-foundations) (_Free limited version of the course available_)
+2. [GitHub for Beginners](https://github.blog/tag/github-for-beginners/)
+3. [GitHub Training with Andrew Brown](https://www.exampro.co/github-foundations) (_Free limited version of the course available_)
 
 ---
 
