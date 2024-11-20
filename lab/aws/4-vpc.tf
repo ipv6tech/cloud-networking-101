@@ -38,14 +38,22 @@ resource "aws_route_table" "public" {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.igw_i2lab.id
   }
+  route {
+    cidr_block = "10.0.0.0/8"
+    transit_gateway_id = aws_ec2_transit_gateway.tgw.id
+  }
   tags = {
     Name        = "public-${var.ENV}"
     environment = "${var.ENV}"
   }
 }
 
-# Route table public subnet association
+# Subnet associations with public route table
 resource "aws_route_table_association" "public" {
   subnet_id      = aws_subnet.public.id
+  route_table_id = aws_route_table.public.id
+}
+resource "aws_route_table_association" "tgw" {
+  subnet_id      = aws_subnet.tgw.id
   route_table_id = aws_route_table.public.id
 }

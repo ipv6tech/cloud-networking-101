@@ -110,6 +110,52 @@ The final step for the AWS connectivity in this lab is to attach the transit gat
 <details>
 <summary><b>Google: Building a Partner Interconnect Connection</b></summary>
 
+The process of building a Partner Interconnect starts in the [Google Cloud Console](https://console.cloud.google.com/hybrid/interconnects/).
+
+Create a VLAN attachment for a Partner Interconnect connection. This step generates a pairing key that you use in Internet2 Insight Console. The pairing key is a unique key that lets a service provider identify and connect to your Virtual Private Cloud (VPC) network and associated Cloud Router. The Internet2 Console requires this key to complete the configuration of your VLAN attachment.
+
+### Step 1: Create the Interconnect attachment
+
+1. In the Google Cloud console, go to the Cloud Interconnect VLAN attachments tab.
+2. Press **`Create VLAN attachments`**.
+3. Select **`Partner Interconnect connection`**.
+4. In the Encrypt interconnect section, select **`Set up unencrypted Interconnect`**.
+5. Press **`Continue`**.
+6. On the next screen select **`I already have a service provider`**.
+7. Select **`Create a single VLAN`**.
+8. For the Network and Region fields, select the **`i2lab-vpc`** network and the **`us-east4`** region.
+9.  Under the Cloud Router pull down select **`cr-i2lab`**.
+10. VLAN attachment name: Give the VLAN a name such as **`i2cc-vlan`** for the attachment.
+11. IP stack type: Select **`IPv4 (single-stack)`**.
+12. Use a Maximum transmission unit (MTU) for the attachment of **`1460`**. _(The VPC network that uses the attachment must have an MTU set to the same value. In addition, the on-premises virtual machine (VM) instances and routers must have their MTU set to the same value as well. If your network has the default MTU of 1460, then select 1460 as the VLAN attachment MTU.)_
+13. To create the attachments, press **`Create`**. _(This action takes a few minutes to complete.)_
+14. After creation is complete, **copy the pairing keys**. You will use these keys in the Internet2 Insight Console when you create the Google Partner Interconnect Connection.
+15. Since we are requesting a Layer 3 connection with Internet2, you can pre-activate the attachment by selecting **`Enable`**. _(Activating attachments enables you to confirm that you're connecting to the expected service provider. Pre-activating attachments enables you to skip the activation step and lets the attachments start passing traffic immediately after your service provider completes their configuration.)_
+
+### Optional Interconnect Steps
+
+1. **(_Optional_)** You can optionally update your BGP sessions to use MD5 authentication. (I'd recommend skipping this for our lab environment, it'll be one less thing to configure or troubleshoot.)
+2. **(_Optional_)** Bidirectional Forwarding Detection (BFD) for Cloud Router detects forwarding path outages such as link down events, allowing for more resilient hybrid networks. To update your BGP session to use BFD, see Configuring BFD.
+
+### Step 2: Create the Internet2 Interconnect to Google Cloud
+
+1. Navigate to your Virtual Network Space (VNS) from [Lab 1](lab1.md).
+2. Find the Virtual Router you created in Lab 1.
+3. Select **`Add Peering using Google Cloud Partner Interconnect`**.
+![Google peering](files/i2cc_google_peering.png)
+4. Enter your **Pairing Key** from Step 1 above.
+5. Filter by region to select **`Equinix DC1-DC15, DC21 - Ashburn`**.
+6. Select an Interfaces that has bandwidth available.
+7. Enter a **VLAN ID** or use the **`Auto`** button to pick the next available VLAN ID _(Note the VLAN ID, you'll need the VLAN ID later)_.
+8. For **Max Bandwidth** select **`50 Mb/s`**.
+9. You can complete skip the IP Addressing for the Internet2 and Peer. _(This just gets overridden by Google.)_
+10. For the **Peer ASN** enter **`16550`**.
+11. _(Optional)_ For the **BGP Authentication Key** enter **`some_secret`**. _(If you set one in the Google Console you'll need to match it here or BGP won't come up.)_
+12. _(Optional)_ For the **Remote Name** you can enter a unique name.
+13. _(Optional)_ Enter some details for the **Notes**.
+14. Set the **Authoring State** to **`Live`** and live dangerously!
+![Google Peering Connection](files/i2cc_google_peering_2.png)
+
 </details>
 
 ---

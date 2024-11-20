@@ -49,7 +49,7 @@ variable "PUBLIC_SUBNET_CIDR_BLOCK" {
 variable "VNG_SUBNET_CIDR_BLOCK" {
   description = "CIDR block for vng Subnet"
   type        = string
-  default     = "10.200.0.240/28" //change to give the lab vnet a different CIDR block
+  default     = "10.200.0.224/27" //change to give the lab vnet a different CIDR block
 }
 
 # Azure budget for each month

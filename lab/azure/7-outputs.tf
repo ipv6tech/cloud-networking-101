@@ -4,5 +4,5 @@ output "public_ip" {
 }
 # output ssh command to connect to i2lab instance
 output "ssh_command" {
-  value = "ssh -i ${var.PRIVATE_KEY} admin@${azurerm_public_ip.public_ip.ip_address}"
+  value = "ssh -i ${var.PRIVATE_KEY} adminuser@${azurerm_public_ip.public_ip.ip_address}"
 }

@@ -2,7 +2,8 @@
 resource "google_compute_network" "main" {
   project                 = var.GC_PROJECT_ID
   name                    = "${var.ENV}-vpc"
-  auto_create_subnetworks = false # Important: Disable automatic subnet creation
+//  mtu                     = 1500
+  auto_create_subnetworks = false
 }
 
 # Public Subnet

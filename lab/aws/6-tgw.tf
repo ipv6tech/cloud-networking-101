@@ -1,6 +1,6 @@
 # create transit gateway
 resource "aws_ec2_transit_gateway" "tgw" {
-  description                     = "Transit Gateway for Lab Env with I2CC"
+  description                     = "TGW for ${var.ENV} environment"
   default_route_table_association = "enable"
   default_route_table_propagation = "enable"
   auto_accept_shared_attachments  = "enable"
@@ -11,6 +11,18 @@ resource "aws_ec2_transit_gateway" "tgw" {
   }
 }
 
+# create transit gateway attachment
+resource "aws_ec2_transit_gateway_vpc_attachment" "tgw-att" {
+  subnet_ids         = [aws_subnet.tgw.id]
+  transit_gateway_id = aws_ec2_transit_gateway.tgw.id
+  vpc_id             = aws_vpc.i2lab.id
+  tags = {
+    Name        = "tgw-att_${var.ENV}"
+    environment = "${var.ENV}"
+  }
+}
+
+/*
 # create route table for TGW
 resource "aws_ec2_transit_gateway_route_table" "i2lab" {
   transit_gateway_id = aws_ec2_transit_gateway.tgw.id
@@ -19,26 +31,12 @@ resource "aws_ec2_transit_gateway_route_table" "i2lab" {
     environment = "${var.ENV}"
   }
 }
+*/
 
 /* Code below here is a first draft, untested and may not work as expected */
 
-/* # create attachement between TGW and VPC
-resource "aws_ec2_transit_gateway_vpc_attachment" "att-i2lab" {
-  subnet_ids         = [aws_subnet.tgw-subnet-i2lab.id]
-  transit_gateway_id = aws_ec2_transit_gateway.tgw-i2lab.id
-  vpc_id             = aws_vpc.i2lab.id
-  tags = {
-    Name        = "att-${var.ENV}"
-    environment = "${var.ENV}"
-  }
-} */
+/* # create route in the TGW routing table to point toward DXGW
 
-/* # create default route in the TGW routing table to point to 
-resource "aws_ec2_transit_gateway_route" "default" {
-  destination_cidr_block = "0.0.0.0/0"
-  //  transit_gateway_attachment_id  = aws_ec2_transit_gateway_vpc_attachment.att-i2lab.id
-  transit_gateway_route_table_id = aws_ec2_transit_gateway.tgw.id
-}
 */
 
 /* # Create an association between DXGW and TGW

@@ -19,11 +19,13 @@ resource "oci_core_route_table" "rt_i2lab" {
   compartment_id = oci_identity_compartment.i2lab.id
   vcn_id         = oci_core_vcn.vcn_i2lab.id
   display_name   = "rt_i2lab"
+  // Default route to the internet gateway
   route_rules {
     destination       = "0.0.0.0/0"
     network_entity_id = oci_core_internet_gateway.igw_i2lab.id
     description       = "Default route to the internet gateway"
   }
+  // Route to on-premises networks
   route_rules {
     network_entity_id = oci_core_drg.drg_i2lab.id
     destination       = "10.0.0.0/8"
@@ -33,6 +35,7 @@ resource "oci_core_route_table" "rt_i2lab" {
   }
 }
 
+# Security List (Allow all traffic)
 resource "oci_core_security_list" "sl_i2lab" {
   compartment_id = oci_identity_compartment.i2lab.id
   display_name   = "sl_i2lab"

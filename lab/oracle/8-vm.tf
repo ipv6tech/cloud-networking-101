@@ -31,4 +31,11 @@ resource "oci_core_instance" "i2lab" {
       identityfile = var.PRIVATE_KEY
     })
   }
+  //added post testing
+  provisioner "remote-exec" {
+    inline = [
+      "sudo apt-get update",
+      "sudo apt-get upgrade -y"
+    ]
+  }
 }
