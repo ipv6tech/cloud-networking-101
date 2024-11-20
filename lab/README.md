@@ -18,4 +18,17 @@ The labs leverage GitHub Codespaces with Terraform plans to build out basic envi
 
 [Lab 8: Cleaning up (avoiding large bills)](lab8.md)
 
+> [!CAUTION]
+> **Take this work for what it is, a lab environment!**
+>
+> **The following non best practices are adhered to these labs:**
+>
+> - Building the slowest speed connection possible
+> - Building non-redundant connections
+> - Building resources in a single region,zone, etc
+> - Not using IPv6 in this version of the workshop
+> - Using minimal security with wide open access
+> - Local state for Terraform plans
+> - Probably a whole bunch of others!
+
 ![works_on_my_machine](files/works_on_my.jpg)
