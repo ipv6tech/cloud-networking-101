@@ -4,9 +4,9 @@ resource "azurerm_virtual_network_gateway" "i2lab-vng" {
   location            = azurerm_resource_group.i2lab-rg.location
   resource_group_name = azurerm_resource_group.i2lab-rg.name
 
-  type     = "Vpn"
+  type     = "ExpressRoute"
   vpn_type = "RouteBased"
-  sku      = "VpnGw2"
+  sku      = "Standard"
 
   ip_configuration {
     name                          = "i2lab-vng-ipconfig"

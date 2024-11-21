@@ -103,6 +103,59 @@ The final step for the AWS connectivity in this lab is to attach the transit gat
 <details>
 <summary><b>Azure: Building an ExpressRoute (ER) Connection</b></summary>
 
+### Step 1: Create ExpressRoute circuit
+
+The process of building ExpressRoute connections from Azure to Internet2 Insight Console begin in the [Azure Portal](https://portal.azure.com/#browse/Microsoft.Network%2FexpressRouteCircuits).
+
+1. Navigate to the [Azure ExpressRoute service](https://portal.azure.com/#browse/Microsoft.Network%2FexpressRouteCircuits).
+2. Press **`Create ExpressRoute circuit`**.
+3. In the **Resource group** pull down menu select **`i2lab-rg`**.
+4. For **Resiliency** select **`Standard Resiliency`**.
+5. In the **Region** pull down menu select **`East US 2`**.
+6. Type **`i2cc-lab`** or similar for the **Circuit name**.
+7. Leave **Port type** set as **`Provider`**.
+8. For **Peering location** select **`Washington DC`**.
+9. For **Provider** select **`Internet2`**.
+10. For **Bandwidth** select **`50Mbps`**.
+11. Leave **SKU** and **Billing model** set to the defaults of **`Standard`** and **`Metered`**.
+12. Press **`Review + create`**.
+13. On the next screen press **`Create`**.
+14. This will take a minute or two but when it finished you can press **`Go to resource`**.
+15. Under the new ExpressRoute resource you need the **`Service Key`** for Step 2, go ahead and `copy to clipboard`.
+
+### Step 2: Create the ExpressRoute Provisioning Request
+
+This portion of the circuit creation happens in the Internet2 [Insight Console](https://console.internet2.edu/#/vn/list).
+
+1. Navigate to your Virtual Network Space (VNS) from [Lab 1](lab1.md).
+2. Find the Virtual Router you created in Lab 1.
+3. Select **`Add Peering using Azure ExpressRoute`**.
+![Azure peering](files/i2cc_azure_peering.png)
+4. Paste in your **`Service Key`** from Step 1 above.
+5. Choose a **`VLAN ID`**. _(Any ID will do for our lab.)_
+6. For Internet2 IPv4 Address enter **`10.0.0.10`**.
+7. For **IPv4 Prefix Length** enter **`30`**.
+8. For **Peer IPv4 Address** enter **`10.0.0.9`**.
+9. Leave BFD **Enabled**.
+10. _(Optional)_ Change the **Remote Name**.
+11. _(Optional)_ Input some notes about the connection.
+12. Set the **Authoring State** to **`Live`** and live dangerously!
+13. Press **`Save`**.
+![Azure Peering Connection](files/i2cc_azure_peering_2.png)
+
+> NOTE: ExpressRoute service provides a second circuit for redundancy but we'll skip configuring that for the lab.
+
+### Step 3: Create Connection from VPN Gateway (VNG) to ExpressRoute
+
+Using the Terraform Plan in Lab 3 we already created a VNG resource named **`i2lab-vng`** and public IP address for that service. If we hadn't those would be needed before proceeding and can take quite some time to create.
+
+1. Navigate or search for the **`i2lab-vng`** resource or [VNG service](https://portal.azure.com/#view/Microsoft_Azure_HybridNetworking/CreateConnectionBladeV2).
+2. In the left menu bar for the **`i2lab-vng`** resource find Settings>Connections.
+3. Press **`+ Add`** to start the connection creation.
+4. For **Connection type** select **`ExpressRoute`**.
+5. Press **`Review + create`**.
+6. ...... MORE DETAILS HERE
+
 </details>
 
 ---
