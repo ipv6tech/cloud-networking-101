@@ -2,7 +2,9 @@
 
 ## Objective
 
-Establish connectivity between the Internet2 Virtual Router that you build in [Lab 1](lab1.md) with the CSPs of your choice.
+Establish connectivity between the Internet2 Virtual Router, that you build in [Lab 1](lab1.md), and the CSPs of your choice.
+
+There are steps included for each CSP that you wish to build a dedicated connection with below.
 
 <br>
 
@@ -13,7 +15,7 @@ Establish connectivity between the Internet2 Virtual Router that you build in [L
 <details>
 <summary><b>AWS: Building a Hosted Direct Connect (DX) Connection</b></summary>
 
-### Starting in the Internet2 Insight Console
+### Step 1: Starting in the Internet2 Insight Console
 
 1. Navigate to your Virtual Network Space (VNS) from [Lab 1](lab1.md)
 2. Find the Virtual Router you created in Lab 1.
@@ -33,7 +35,7 @@ Establish connectivity between the Internet2 Virtual Router that you build in [L
 15. Set the **Authoring State** to **`Live`** and live dangerously!
 ![AWS Peering Connection](files/i2cc_aws_peering_2.png)
 
-### Accept the Direct Connect Connection
+### Step 2: Accept the Direct Connect Connection
 
 From the AWS Console
 
@@ -41,7 +43,7 @@ From the AWS Console
 2. Select the new connection and pick **`View details`**.
 3. On the next screen select **`Accept`** for the connection. _(This will take a few minutes)_
 
-### Configure AWS Direct Connect Gateway with a Transit VIF
+### Step 3: Configure AWS Direct Connect Gateway with a Transit VIF
 
 After the connection shows as available
 
@@ -215,6 +217,12 @@ Create a VLAN attachment for a Partner Interconnect connection. This step genera
 
 <details>
 <summary><b>Oracle: Building a FastConnect Connection</b></summary>
+
+### Step 1: Create the FastConnect Connection
+
+1. Navigate to FastConnect
+2. Create FastConnect
+3. Create FastConnect Connection in Insight Console
 
 </details>
 

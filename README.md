@@ -59,22 +59,24 @@ You can find the [slide deck for the lectures here](slides/cloud_networking_101-
 
 ### Lab Requirements
 
-It's helpful if you have some prior experience with _GNU/Linux_, [_Git_](https://gitimmersion.com/), _GitHub_, [_Terraform_](https://developer.hashicorp.com/terraform/tutorials), and _Cloud Technology_ but it's not a prerequisite to learn and have fun with the labs.
+It's helpful if you have some prior experience with _GNU/Linux_, [_Git_](https://gitimmersion.com/), [_GitHub_](https://docs.github.com/en/get-started), [_Terraform_](https://developer.hashicorp.com/terraform/tutorials), [_VS Code_](https://code.visualstudio.com/docs/getstarted/getting-started), and _Cloud Technology_ but it's not a prerequisite to learn and have fun with the labs.
 
 - Laptop with internet access.
 - Access to Internet2's [Insight Console](https://console.internet2.edu/).
-- [GitHub account](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github) with access to run GitHub Codespaces.
-- An account with each of the Cloud Service Providers (CSPs) you wish to use with the labs.
+- [GitHub account](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github) with access to run [GitHub Codespaces](https://github.com/codespaces).
+- An account with each of the Cloud Service Providers (CSPs) you wish to use during the labs.
 
 >[!TIP]
->I strongly recommend for this lab you use a personal **free tier account** so you don't run into policy/permission issues with a restricted account from your institution.
+>I strongly recommend a personal **free tier account** so you don't run into policy/permission issues with a restricted account from your institution.
 >
 >Consider creating a free-tier account using an email alias address, masked email or use plus addressing like `<email>+aws-training@gmail.com` for each account.
+
+>[!IMPORTANT]
+>Free tier accounts will require a credit card but we will keep the costs to a minimum. In many cases the free services and credits your account will start with will cover some or all the costs. (With my accounts I've been able to run through the labs and keep the daily cost around 5 USD with each CSP.)
 
 ### Free Tier Services
 
 As you build out your Free Tier accounts keep in mind that the terraform code for the Cloud Service Provider (lab) environments and the GitHub Codespaces are preconfigured to run in the US-East regions. If you are able to use those regions for this workshop it should simplify things.
-
 
 > - [AWS Free Tier](https://aws.amazon.com/free)
 > - [Azure Free Services](https://azure.microsoft.com/en-us/pricing/free-services)
@@ -111,9 +113,12 @@ As you build out your Free Tier accounts keep in mind that the terraform code fo
 
 ## TODO
 
-- [ ] Fix Azure VM creation which isn't working
 - [ ] Finish Lab breakouts and documentation
 - [ ] Export slide deck to PDF
+- [ ] Improve diagrams
+- [ ] Include more screenshots
+- [ ] Fix TF code to replace old SSH configs
+- [ ] Investigate MTU settings for Google Cloud
 - [ ] [Maybe] Breakout slides for each lesson
 - [ ] [Future] Lab solution branches
 - [ ] [Future] IPv6 addressing

@@ -17,7 +17,7 @@ This Codespace includes a custom, prebuilt, devcontainer that has the following 
 
 ---
 
-## Starting GitHub Codespace
+### Step 1: Starting GitHub Codespace
 
 >[!NOTE]
 > We start the Codespace from the original repository in order to take advantage of the prebuilt devcontainer and save time. However this will necessitate [forking to save changes](#forking-to-save-changes) which is covered in the next section.
@@ -28,7 +28,7 @@ Click below :arrow_down: to get started :rocket:
 
 ---
 
-### Forking to save changes
+### Step 2: Fork the repository to save our environment
 
 >[!IMPORTANT]
 > Make sure to do these steps carefully otherwise when the Codespace shutdowns due to inactivity you'll lose the environment variables that the Terraform plans expect.
@@ -38,13 +38,15 @@ After a minute or two the Codespace devcontainer will be running, next we'll for
 The quickest way I figured out how to achieve this process:
 
 1. Open the Source Control panel
-2. Force a push.
-![Push](files/sourcecontrol.png)
-3. Shutdown the Codespace.
-![Shutdown](files/command_palette.png)
-4. Wait for the Codespace window to show a button to "Restart codespace".
-5. Select "Restart codespace".
-6. Verify the Codespace is using the fork under your account: In a Codespace shell run `echo $GITHUB_REPOSITORY`. It should print _**your_username/cloud-networking-101**_.
+2. Force a push.![Push](files/sourcecontrol.png)
+3. In the message box press `Create Fork`.![Create fork](files/create_a_fork.png)
+4. In the next message box press `Allow`.![Allow GitHub extension](files/allow_gh_ext.png)
+5. At the next prompt `select` your GitHub account.![Select GitHub account](files/select_gh_account.png)
+6. Ignore the error in the next message box.![Ignore error](files/ignore_error.png)
+7. Stop the Codespace.![Stop Codespaces](files/command_palette.png)
+8. Wait for the Codespace window to show a button to `Restart codespace`.
+9. Select `Restart codespace`.
+10. Verify the Codespace is using the fork under your account: In a Codespace shell run `echo $GITHUB_REPOSITORY`. It should print _**your_username/cloud-networking-101**_.
 
 **Congratulations!**
 
