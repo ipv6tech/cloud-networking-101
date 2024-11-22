@@ -35,7 +35,7 @@ resource "oci_core_instance" "i2lab" {
   provisioner "remote-exec" {
     inline = [
       "sudo apt-get update",
-      "sudo apt-get upgrade -y"
+      "sudo apt-get upgrade -y",
     ]
   }
 }
