@@ -11,10 +11,10 @@ resource "aws_instance" "i2lab" {
   key_name                    = aws_key_pair.one-ring.id # using for labing purposes until we get dynamic keys working
   user_data                   = file("files/userdata.tpl")
   provisioner "local-exec" {
-    command = templatefile("files/${var.HOST_OS}-ssh-config.tpl", {
+    command = templatefile("files/linux-ssh-config.tpl", {
       host         = "${var.ENV}-aws"
       hostname     = self.public_ip
-      user         = "admin" // change to ec2 for amazon linux ami
+      user         = "admin" // change to "ec2" for Amazon Linux
       identityfile = var.PRIVATE_KEY
     })
   }

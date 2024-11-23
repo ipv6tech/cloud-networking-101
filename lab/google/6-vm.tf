@@ -16,7 +16,7 @@ resource "google_compute_firewall" "allow_from_internet" {
 # Small VM Instance in the Private Subnet
 resource "google_compute_instance" "vm" {
   project      = var.GC_PROJECT_ID
-  name         = "${var.ENV}-gcloud"
+  name         = "${var.ENV}-google"
   zone         = var.GC_ZONE
   machine_type = var.MACHINE_TYPE
   network_interface {
@@ -36,7 +36,7 @@ resource "google_compute_instance" "vm" {
   }
   provisioner "local-exec" {
     command = templatefile("files/linux-ssh-config.tpl", {
-      host         = "${var.ENV}-gcloud"
+      host         = "${var.ENV}-google"
       hostname     = self.network_interface[0].access_config[0].nat_ip
       user         = "admin"
       identityfile = var.PRIVATE_KEY
