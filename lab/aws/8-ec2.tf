@@ -18,10 +18,6 @@ resource "aws_instance" "i2lab" {
       identityfile = var.PRIVATE_KEY
     })
   }
-  // added post working to change the hostname needs testing
-  provisioner "remote-exec" {
-    inline = ["sudo hostnamectl set-hostname i2lab-aws",]
-  }
   tags = {
     Name        = "${var.ENV}"
     environment = "${var.ENV}"

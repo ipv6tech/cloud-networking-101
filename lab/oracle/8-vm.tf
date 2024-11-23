@@ -23,19 +23,30 @@ resource "oci_core_instance" "i2lab" {
     source_id   = "ocid1.image.oc1.iad.aaaaaaaac3eshnn5mcmwpwnvy76lnb5wzzlr2dew4ilbb5gfealimrostriq"
   }
 
+  # Local provisioner to create SSH config
   provisioner "local-exec" {
-    command = templatefile("files/linux-ssh-config.tpl", {
-      host         = "${var.ENV}-oracle"
-      hostname     = self.public_ip
-      user         = "ubuntu"
-      identityfile = var.PRIVATE_KEY
-    })
-  }
-  //added post testing
-  provisioner "remote-exec" {
-    inline = [
-      "sudo apt-get update",
-      "sudo apt-get upgrade -y",
-    ]
+    command = <<-EOT
+      # Wait for public IP to be allocated
+      while [[ -z "$PUBLIC_IP" ]]; do
+        PUBLIC_IP=$(oci compute instance list-vnics \
+          --instance-id ${self.id} \
+          --query "data[0].\"public-ip\"" \
+          --raw-output)
+        sleep 5
+      done
+
+      # Create or update SSH config
+      cat <<EOF >> ~/.ssh/config
+
+      Host ${self.display_name}
+        HostName $PUBLIC_IP
+        User opc
+        IdentityFile ~/.ssh/id_rsa
+        StrictHostKeyChecking no
+        UserKnownHostsFile /dev/null
+EOF
+    EOT
+
+    interpreter = ["/bin/bash", "-c"]
   }
 }
