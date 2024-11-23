@@ -27,3 +27,4 @@ dnsutils \
 nmap \
 gnupg-agent \
 software-properties-common &&
+sudo hostnamectl set-hostname i2lab-aws

@@ -1,4 +1,6 @@
-# Lab 7: Bonus Lab - Verifying Routing Tables
+# Lab 7: Bonus Lab - Verifying Routing Tables with the CSPs
+
+In this lab we will look at some of the network tools that the CSPs provide to help look at the routing tables and which prefixes are seen by our i2lab environment with that provider.
 
 ---
 

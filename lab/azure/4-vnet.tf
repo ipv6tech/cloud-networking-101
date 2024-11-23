@@ -83,33 +83,3 @@ resource "azurerm_subnet_network_security_group_association" "subnet_nsg_assoc" 
   subnet_id                 = azurerm_subnet.i2lab-public.id
   network_security_group_id = azurerm_network_security_group.i2lab-nsg.id
 }
-
-# Create a public IP address
-resource "azurerm_public_ip" "public_ip" {
-  name                = "i2lab_public_ip"
-  location            = azurerm_resource_group.i2lab-rg.location
-  resource_group_name = azurerm_resource_group.i2lab-rg.name
-  allocation_method   = "Static"
-}
-
-# Create a public IP address for vng
-resource "azurerm_public_ip" "vng_public_ip" {
-  name                = "i2lab-vng-public-ip"
-  location            = azurerm_resource_group.i2lab-rg.location
-  resource_group_name = azurerm_resource_group.i2lab-rg.name
-  allocation_method   = "Static"
-}
-
-# Create a network interface
-resource "azurerm_network_interface" "i2lab-nic" {
-  name                = "i2lab-nic"
-  location            = azurerm_resource_group.i2lab-rg.location
-  resource_group_name = azurerm_resource_group.i2lab-rg.name
-
-  ip_configuration {
-    name                          = "internal"
-    subnet_id                     = azurerm_subnet.i2lab-public.id
-    private_ip_address_allocation = "Dynamic"
-    public_ip_address_id          = azurerm_public_ip.public_ip.id
-  }
-}

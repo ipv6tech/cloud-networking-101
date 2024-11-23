@@ -15,3 +15,11 @@ resource "azurerm_virtual_network_gateway" "i2lab-vng" {
     subnet_id                     = azurerm_subnet.gw-subnet.id
   }
 }
+
+# Create a public IP address for vng
+resource "azurerm_public_ip" "vng_public_ip" {
+  name                = "i2lab-vng-public-ip"
+  location            = azurerm_resource_group.i2lab-rg.location
+  resource_group_name = azurerm_resource_group.i2lab-rg.name
+  allocation_method   = "Static"
+}

@@ -218,7 +218,7 @@ Create a VLAN attachment for a Partner Interconnect connection. This step genera
 <details>
 <summary><b>Oracle: Building a FastConnect Connection</b></summary>
 
-### Step 1: Create the FastConnect Connection
+### Step 1: Create the FastConnect Connection-
 
 1. Navigate to FastConnect
 2. Create FastConnect

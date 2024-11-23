@@ -12,11 +12,13 @@ I'm not going to kid you, this is going to be a bit of a slog to authentic and p
 
 ### Set Common Environment Variables
 
-1. From the Codespace shell run `export TF_VAR_EMAIL="<your_email_goes_here>"`.
-2. Push the Environment variable to Codespace Secrets (to survive the instance restarts)
+1. From the Codespaces shell run `export TF_VAR_EMAIL="<your_email_goes_here>"`.
+2. From the Codespaces shell run `export TF_VAR_ENV="i2lab"`.
+3. Push the Environment variable to Codespace Secrets (to survive the instance restarts)
 
 ```bash
 gh secret set TF_VAR_EMAIL -b "$TF_VAR_EMAIL" -u -r $GITHUB_REPOSITORY
+gh secret set TF_VAR_ENV -b "$TF_VAR_ENV" -u -r $GITHUB_REPOSITORY
 ```
 
 ---
