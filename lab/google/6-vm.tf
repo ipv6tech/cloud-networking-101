@@ -36,7 +36,7 @@ resource "google_compute_instance" "vm" {
   }
   provisioner "local-exec" {
     command = templatefile("files/linux-ssh-config.tpl", {
-      host         = "${var.ENV}-google"
+      host         = "google"
       hostname     = self.network_interface[0].access_config[0].nat_ip
       user         = "admin"
       identityfile = var.PRIVATE_KEY

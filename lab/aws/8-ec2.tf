@@ -12,7 +12,7 @@ resource "aws_instance" "i2lab" {
   user_data                   = file("files/userdata.tpl")
   provisioner "local-exec" {
     command = templatefile("files/linux-ssh-config.tpl", {
-      host         = "${var.ENV}-aws"
+      host         = "aws"
       hostname     = self.public_ip
       user         = "admin" // change to "ec2" for Amazon Linux
       identityfile = var.PRIVATE_KEY

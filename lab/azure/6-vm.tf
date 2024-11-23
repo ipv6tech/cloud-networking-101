@@ -27,7 +27,7 @@ resource "azurerm_linux_virtual_machine" "i2lab-vm" {
   # Local provisioner to create SSH config
   provisioner "local-exec" {
     command = templatefile("files/linux-ssh-config.tpl", {
-      host         = "${var.ENV}-azure"
+      host         = "azure"
       hostname     = "${azurerm_public_ip.public_ip.ip_address}"
       user         = "adminuser"
       identityfile = var.PRIVATE_KEY
