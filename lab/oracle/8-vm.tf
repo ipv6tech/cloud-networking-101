@@ -28,7 +28,7 @@ resource "oci_core_instance" "i2lab" {
     command = templatefile("files/linux-ssh-config.tpl", {
       host         = "oracle"
       hostname     = self.public_ip
-      user         = "adminuser"
+      user         = "ubuntu"
       identityfile = var.PRIVATE_KEY
     })
   }
