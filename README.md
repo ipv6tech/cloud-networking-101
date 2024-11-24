@@ -114,6 +114,7 @@ As you build out your Free Tier accounts keep in mind that the terraform code fo
 ## TODO
 
 - [ ] Finish Lab breakouts and documentation
+  - [ ] Azure workflow for ExpressRoute and VNG connections in Lab5 are incomplete.
 - [ ] Export slide deck to PDF
 - [ ] Improve diagrams
 - [ ] Include more screenshots
