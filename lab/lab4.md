@@ -32,7 +32,7 @@ Use the Infrastructure as Code instructions below for each Cloud provider that y
 ### Verify AWS
 
 - Can you SSH to the instance?
-  - This terraform plan should create an SSH config entry so you can use the Codespace shell to run `ssh i2lab-aws`.
+  - This terraform plan should create an SSH config entry so you can use the Codespace shell to run `ssh aws`.
 - Does the instance have access to ping/traceroute via the IGW?
 
 </details>
@@ -59,7 +59,7 @@ Use the Infrastructure as Code instructions below for each Cloud provider that y
 ### Verify Azure
 
 - Can you SSH to the instance?
-  - This terraform plan should create an SSH config entry so you can use the Codespace shell to run `ssh i2lab-azure`.
+  - This terraform plan should create an SSH config entry so you can use the Codespace shell to run `ssh azure`.
 - Does the instance have access to ping/traceroute via the IGW?
 
 </details>
@@ -84,7 +84,7 @@ Use the Infrastructure as Code instructions below for each Cloud provider that y
 ### Verify Google Cloud
 
 - Can you SSH to the instance?
-  - This terraform plan should create an SSH config entry so you can use the Codespace shell to run `ssh i2lab-google`.
+  - This terraform plan should create an SSH config entry so you can use the Codespace shell to run `ssh google`.
 - Does the instance have access to ping/traceroute via the IGW?
 
 </details>
@@ -106,15 +106,21 @@ Use the Infrastructure as Code instructions below for each Cloud provider that y
    1. If successful this will output a list of actions that will be performed.
 4. Next we will run `terraform apply -auto-approve`.
 
-### Verify SSH Access
+### Verify SSH Access to Oracle
 
 - Can you SSH to the instance?
-  - The terraform plans should create an SSH config entry so you can use the Codespace shell to run `ssh i2lab-aws`, `ssh i2lab-azure`, `ssh i2lab-gcloud`, or `ssh i2lab-oracle`.
-  - Can you reach the instance via SSH?
+  - This terraform plan should create an SSH config entry so you can use the Codespace shell to run `ssh oracle`.
+- Does the instance have access to ping/traceroute via the IGW?
 
 </details>
 
 ---
+
+### Verify SSH Access
+
+- Can you SSH to the instance?
+  - The terraform plans should create an SSH config entry so you can use the Codespace shell to run `ssh aws`, `ssh azure`, `ssh google`, or `ssh oracle`.
+  - Can you reach the instance via SSH?
 
 At this point you have provisioned the base lab environment with two or more cloud providers.
 

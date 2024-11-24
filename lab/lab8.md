@@ -78,4 +78,10 @@ This is an optional item, if you don't use GitHub Codespaces for other stuff lea
 
 If you wish you can clean this up by simply deleting the GitHub Codespace instance from your account.
 
-You can optionally also delete the GitHub Codespace Secrets.
+You can optionally also delete the [GitHub Codespace Secrets](https://github.com/settings/codespaces) that we set in Lab 3.
+
+---
+
+Thanks for attending the workshop, I hope you got something out of the workshop and are more comfortable creating dedicated connections with Internet2 Cloud Connect and using Insight Console and Internet2 Virtual Networks with the Cloud Connect partners.
+
+If you found this valuable and would like to see similar workshops in the future please let us know.
