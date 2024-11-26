@@ -114,17 +114,15 @@ As you build out your Free Tier accounts keep in mind that the terraform code fo
 ## TODO
 
 - [ ] Finish Lab breakouts and documentation
-  - [ ] Azure workflow for ExpressRoute and VNG connections in Lab5 are incomplete.
 - [ ] Export slide deck to PDF
 - [ ] Improve diagrams
-- [ ] Include more screenshots
-- [ ] Fix TF code to replace old SSH configs
-- [ ] Investigate MTU settings for Google Cloud
+- [ ] [Maybe] Rework code to update SSH config file when public IP changes
 - [ ] [Maybe] Breakout slides for each lesson
 - [ ] [Future] Lab solution branches
 - [ ] [Future] IPv6 addressing
 - [ ] [Future] Refactor code to make it easier to switch regions
 - [ ] [Future] Migrate code to OpenTofu
+- [ ] [Future] Develop 2/3/400 level workshop that builds on this workshop
 
 ---
 

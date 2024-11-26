@@ -1,7 +1,6 @@
 # Variables (Customize these as needed)
 variable "ENV" {
   type    = string
-  default = "i2lab"
 }
 variable "GC_PROJECT_ID" {
   type    = string
@@ -26,10 +25,10 @@ variable "SUBNET_IP_CIDR_RANGE" {
   type    = string
   default = "10.208.1.0/24"
 }
-/*variable "VPC_CIDR" {
+variable "GC_VPC_CIDR" {
   type    = string
   default = "10.208.0.0/16"
-}*/
+}
 variable "PUBLIC_KEY" {
   type    = string
   default = "~/.ssh/one-ring.pub"

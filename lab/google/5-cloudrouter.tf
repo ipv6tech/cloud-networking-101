@@ -6,6 +6,11 @@ resource "google_compute_router" "default" {
   network = google_compute_network.main.id
   bgp {
     asn = var.CR_ASN
+    advertise_mode = "CUSTOM"
+//    advertised_groups = ["ALL_SUBNETS"] // Uncomment this line to advertise all subnets
+    advertised_ip_ranges {
+      range = var.GC_VPC_CIDR
+    }
   }
 }
 
