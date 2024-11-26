@@ -4,15 +4,15 @@
 
 Establish connectivity between the Internet2 Virtual Router, that you build in **[Lab 1](lab1.md)**, and the CSPs of your choice.
 
-While some key components of dedicated connectivity have been provisioned with code in **[Lab 3](lab3.md)**, there are some resources, such as Azure VNG's that just take too long to manually deploy and wait for. One of the primary objectives of this workshop was to understand the components necessary for dedicated connectivity with the various CSPs. While some of these steps are simple to achieve using code I felt it was important to do some of the processes manually so you could see the components that connect together first hand.
+While some key components of dedicated connectivity have been provisioned with code in **[Lab 3](lab3.md)**, such as Azure VNG's, many key components or configuration steps haven't been provisioned. One of the primary objectives of this workshop was to understand the components necessary for dedicated connectivity with the various CSPs. While some of these steps are simple or quick to achieve using code I felt it was important to do many of these processes manually so you could see the components that connect together first hand.
 
 ### Multicloud Routing Diagram
 
 ![Multicloud routing diagram](files/multicloud.png)
 
-### Dedicated connection IPv4 addressing plan
+### IPv4 addressing plan for dedicated connections
 
-The image below shows the IPv4 addressing used for the dedicated connections with each provider, except for Google, used in the labs. (Google assigns reserved link-local addressing from 169.254.0.0/16.)
+This IPv4 addressing is used for the dedicated connections with each provider in the labs, except for Google. (Google assigns reserved link-local addressing from 169.254.0.0/16.)
 ![Dedicated Connection Addressing](files/connection_addressing.png)
 
 ---
@@ -20,12 +20,15 @@ The image below shows the IPv4 addressing used for the dedicated connections wit
 <details>
 <summary><b>AWS: Building a Hosted Direct Connect (DX) Connection</b></summary>
 
+### AWS Architecture
+
+![AWS Architecture](files/aws_architecture.png)
+
 ### Step 1: Starting in the Internet2 Insight Console
 
 1. Navigate to your Virtual Network Space (VNS) from [Lab 1](lab1.md)
 2. Find the Virtual Router you created in Lab 1.
 3. Select **`Add Peering using AWS Direct Connect`**.
-![AWS peering](files/i2cc_aws_peering.png)
 4. In the **Create Peering** window fill in the details:
    - Enter your **AWS Account ID**.
    - **Region** select **`US East (N. Virginia)`**.
@@ -39,7 +42,7 @@ The image below shows the IPv4 addressing used for the dedicated connections wit
    - **MTU** at 1500 for our lab.
    - _(Optional)_ For the **Remote Name** you can enter a unique name.
    - _(Optional)_ Enter some details for the **Notes**.
-   - Set the **Authoring State** to **`Live`**. (Let's Go! This isn't production! :rocket:) ![AWS Peering Connection](files/i2cc_aws_peering_2.png)
+   - Set the **Authoring State** to **`Live`**. (Let's Go! This isn't production! :rocket:) ![AWS Peering Connection](files/aws_i2cc_peer.png)
 5. Press **`Save`**.
 
 ### Step 2: Accept the Direct Connect Connection
@@ -154,18 +157,23 @@ This portion of the circuit creation happens in the Internet2 [Insight Console](
 
 > **NOTE:** ExpressRoute service provides a second circuit for redundancy but we'll skip configuring that for the lab.
 
-### Step 3: Create Connection from VPN Gateway (VNG) to ExpressRoute
+### Step 3: Create Connection between ExpressRoute and VPN Gateway (VNG)
 
-Using the Terraform plan in Lab 3 we already created a VNG resource named **`i2lab-vng`** and public IP address for that service. Creating a VNG takes quite some time and was the primary motivators in using code to spin up some base resources.
+Using the Terraform plan in [Lab 3](lab3.md) we already created a VNG resource named **`i2lab-vng`** and public IP address for that service that is connected to the Gateway subnet in our i2lab VNet. Creating a VNG takes quite some time and was the primary motivators in using code to spin up some base resources otherwise I would have added a step to create the VNG.
 
 1. Navigate or search for the **`i2lab-vng`** resource or [VNG service](https://portal.azure.com/#view/Microsoft_Azure_HybridNetworking/CreateConnectionBladeV2).
-2. In the left menu bar for the **`i2lab-vng`** resource find Settings>Connections.
+2. In the left menu bar for the **`i2lab-vng`** resource find **Settings>Connections**.
 3. Press **`+ Add`** to start the connection creation.
-4. For **Connection type** select **`ExpressRoute`**.
-5. Press **`Review + create`**.
-6. ...... MORE DETAILS HERE
-7. ..... MORE DETAILS NEEDED
-8. ...Waiting on IC to get fixed before I can continue...
+4. Change **Connection type** from VNet-to-VNet to **`ExpressRoute`**.
+![ER to VNG Connection](files/az_vng_connection.png)
+5. Press **`Next: Settings >`**.
+![VNG Connection Settings](files/az_vng_connection_2.png)
+6. Enter the settings details:
+   - **Resiliency** choose **`Standard Resiliency`**.
+   - **Virtual network gateway** choose **`i2lab-vng`**.
+   - **ExpressRoute circuit** choose **`i2cc-i2lab`**.
+7. Press **`Review + create`**.
+8. Press **`Create`**.
 
 </details>
 
@@ -174,9 +182,13 @@ Using the Terraform plan in Lab 3 we already created a VNG resource named **`i2l
 <details>
 <summary><b>Google: Building a Partner Interconnect Connection</b></summary>
 
+## Creating a VLAN attachment for a Partner Interconnect connection
+
 The process of building a Partner Interconnect starts in the [Google Cloud Console](https://console.cloud.google.com/hybrid/interconnects/).
 
-Create a VLAN attachment for a Partner Interconnect connection. This step generates a pairing key that you use in Internet2 Insight Console. The pairing key is a unique key that lets a service provider identify and connect to your Virtual Private Cloud (VPC) network and associated Cloud Router. The Internet2 Console requires this key to complete the configuration of your VLAN attachment.
+![Google Cloud Architecture](files/gc_architecture.png)
+
+This step generates a pairing key that you use in Internet2 Insight Console. The pairing key is a unique key that lets a service provider identify and connect to your Virtual Private Cloud (VPC) network and associated Cloud Router. The Internet2 Console requires this key to complete the configuration of your VLAN attachment.
 
 ### Step 1: Create the Interconnect attachment
 
@@ -215,14 +227,14 @@ In the Google Cloud Console:
    - Choose an **Interface** that has bandwidth available.
    - **VLAN ID** use the **`Auto`** button to pick the next available VLAN ID.
    - **Max Bandwidth** select **`50 Mb/s`**.
-   - **IP Addressing** You can complete skip the IP Addressing for the Internet2 and Peer. _(This just gets overridden by Google.)_
+   - **IP Addressing** You can completely skip the IP Addressing for the Internet2 and Peer. _(This just gets overridden by Google.)_
    - **Peer ASN** enter **`16550`**.
    - _(Optional)_ For the **BGP Authentication Key** enter **`some_secret`**. _(If you set one in the Google Console you'll need to match it here or BGP won't come up.)_
    - _(Optional)_ For the **Remote Name** you can enter a unique name.
    - _(Optional)_ Enter some details for the **Notes**.
    - Set the **Authoring State** to **`Live`** and live dangerously!
 ![Google Peering Connection](files/i2cc_gc_peering.png)
-1. Press **`Save`**.
+5. Press **`Save`**.
 
 </details>
 
@@ -247,8 +259,7 @@ Start in the Oracle Console
    - **Virtual circuit type** choose **`Private Circuit`**.
    - **Traffic** choose **`All traffic`**.
    - **Dynamic routing gateway** choose **`drg-i2lab`**.
-   - **Provisioned Bandwidth** select **`1Gbps`**.
-![FastConnect settings](files/oci_fc.png)
+   - **Provisioned Bandwidth** select **`1Gbps`**.![FastConnect settings](files/oci_fc.png)
 6. Press **`Create`**.
 7. Wait for the Oracle console page to refresh and show the new circuit.
 8. Select the new circuit and find the **`OCID`** for connection. Copy this value you need it for Step 2.
@@ -273,7 +284,6 @@ From Internet2 Insight Console
    - _(Optional)_ **Remote Name** leave as is or modify.
    - _(Optional)_ **Notes** enter details about the connection.
    - Set the **Authoring State** to **`Live`**. (Let's Go! This isn't production! :rocket:)
-
 ![FastConnect Peering Details](files/i2cc_oci_peering.png)
 5. Press **`Save`**.
 

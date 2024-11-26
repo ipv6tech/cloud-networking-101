@@ -39,7 +39,7 @@ This Lab will walk you through the steps required to remove the connections and 
 
 1. Delete the connection toward Azure.
 
-# Step 3. Terraform Clean-up Azure
+### Step 3. Terraform Clean-up Azure
 
 1. In the Codespace shell run `cd $CODESPACE_VSCODE_FOLDER/lab/azure`.
 2. Next run `terraform destroy`.

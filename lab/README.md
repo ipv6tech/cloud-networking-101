@@ -14,7 +14,7 @@ The labs leverage GitHub Codespaces with Terraform plans to build out basic envi
 
 [Lab 6: Testing and verifying routing](lab6.md)
 
-[Lab 7: Bonus???](lab7.md)
+[Lab 7: Verifying Routing Tables with the CSPs _(time permitting)_](lab7.md)
 
 [Lab 8: Cleaning up (avoiding large bills)](lab8.md)
 
