@@ -1,6 +1,6 @@
 # Lab 8: Close-out / Clean up
 
-This Lab will walk you through the steps required to remove the connections and resources in each of the Cloud providers so you aren't getting billed after the workshop.
+This Lab will walk you through the steps required to remove the connections and resources we built with each provider so you aren't accruing costs after the workshop.
 
 > [!IMPORTANT]
 > Ask if you need help! This is important so that you aren't getting billed.
@@ -172,13 +172,16 @@ At this point you should have seen a successful message similar to **`Destroy Co
 
 ---
 
-## GitHub Cleanup --- NEEDS FINISHING
+## GitHub Cleanup
 
-This is an optional item, if you don't use GitHub Codespaces for other stuff leaving the Codespace Instance in a stopped state shouldn't use more than the allocated free service hours and storage for any given month.
+There are a few places to consider cleaning up in GitHub.
 
-If you wish you can clean this up by simply deleting the GitHub Codespace instance from your account.
-
-You can optionally also delete the [GitHub Codespace Secrets](https://github.com/settings/codespaces) that we set in Lab 3.
+- **The fork of the Cloud Networking 101 repository**
+  - If you'd like to keep the fork of the repository feel free, if you have improvements feel free to do a PR and if we can use the improvements in a future workshop we will. Otherwise feel free to delete the fork from your account.
+- [**GitHub Codespaces instance**](https://github.com/codespaces)
+  - You can safely, manually, delete the Codespaces instances after you've finished your **`terraform destroy`** for each provider. Or just leave the instance unused for 30 days and it will self delete. You can always launch a new codespace from the original repository or from your fork of the repository in the future.
+- [**GitHub Codespace Secrets**](https://github.com/settings/codespaces) _(used for environment variables)_
+  - There are a limit to how many Codespace secrets you can have in your account and likely the tokens will go stale. Of all the GitHub clean-up this is the one that probably makes the most sense to do. Especially if you don't plan to do the labs in the future.
 
 ---
 
