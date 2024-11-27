@@ -73,7 +73,6 @@ Here are the steps to view the routes learned and installed in a routing table b
 6. Select **`Get all route rules`**.
 ![OCI Get Routes](files/oci_get_routes.png)
 
-
 Here's what a DRG route table with routes from the Internet2 Virtual Router should look like:
 
 ![OCI DRG Routes](files/oci_drg_routes.png)
