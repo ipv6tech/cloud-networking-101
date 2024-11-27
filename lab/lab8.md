@@ -61,6 +61,15 @@ This Lab will walk you through the steps required to remove the connections and 
 
 ## Oracle Cloud Clean-up
 
+### Step 1: Delete FastConnect Peer from Insight Console
+
+To delete the Oracle FastConnect peer in the Insight Console
+1. Navigate to the Virtual Network Space
+2. Find the Virtual Router and Oracle FastConnect connection
+3. Press **`Details`** on the Peering.
+4. Press the hamburger icon in the upper right hand corner of the details window.
+5. Press **`Delete Peering`**.
+
 ### Deprovision Oracle Cloud
 
 1. In the Oracle Cloud Console navigate to the Fast Connect Service.

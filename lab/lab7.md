@@ -6,7 +6,19 @@ In this lab we will look at some of the network tools that the CSPs provide to h
 
 ## AWS Routing
 
-The "cloud" way of doing this is to create a log 
+This one is the least straight forward. There is the "cloud native" way to do prefix monitoring and BGP peer state.
+
+This [blog](https://aws.amazon.com/blogs/networking-and-content-delivery/monitor-bgp-status-on-aws-direct-connect-vifs-and-track-prefix-count-advertised-over-transit-vif/) has a great walk-through on alerting and monitoring BGP status and prefix counts. If you have time and would like to try this walk-through free free but make sure to leave enough time for [Lab 8](lab8.md) where we will destroy the lab environments and clean-up resources to avoid paying unnecessary bills.
+
+### Transit gateway route table
+
+Inside the AWS Console one place that you can check to see which routes are being propagated is under the Transit gateway routing table.
+
+To view the Transit gateway routing table
+
+![Transit Gateway Routes](files/aws_tgw_routes.png)
+
+
 
 ---
 
@@ -20,13 +32,6 @@ How to view the ER routing table:
 
 1. Navigate to the ER service....
 ![View ER Route Table](files/az_er_route_table.png)
-
-### VNet/Subnet Routing Table
-
-How to view the VNet routing table:
-
-1. Navigate to the VNet
-2. Do some stuff....
 
 ## Google Cloud Routing
 
@@ -47,14 +52,28 @@ From the Cloud Router we can see what the routing table looks like.
 4. Press **VIEW**.
 ![GC Routing Table](files/gc_vpc_route_table.png)
 
-This will show you the routes that are learned and installed in the VPC routing table. Bonus: try another region and see what the routing table looks like.
+This will show you the routes that are learned and installed in the VPC routing table.
+> **Bonus:** Try another region and see what the routing table looks like.
 
 ---
 
 ## Oracle Cloud Routing
 
-### DRG Routing table
+### Dynamic route gateway routes
 
-How to view the routing table for the DRG
+Viewing the routes learned by the DRG is nested and easy to miss unless you are really familiar with what you are looking for or know it's even possible.
 
-1. 
+Here are the steps to view the routes learned and installed in a routing table by the DRG.
+
+1. Open the navigation menu and click Networking. Under Customer connectivity, click Dynamic routing gateway.
+2. Under List Scope, select the compartment that contains the DRG with route table information you want to get.
+3. The page updates to display only the resources in that compartment. If you're not sure which compartment to use, contact an administrator. For more information, see Access Control.
+4. Click the name of the DRG.
+5. Under Resources, choose a DRG route tables by clicking on it.
+6. Select **`Get all route rules`**.
+![OCI Get Routes](files/oci_get_routes.png)
+
+
+Here's what a DRG route table with routes from the Internet2 Virtual Router should look like:
+
+![OCI DRG Routes](files/oci_drg_routes.png)

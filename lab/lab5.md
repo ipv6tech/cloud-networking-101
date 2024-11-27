@@ -264,7 +264,19 @@ Start in the Oracle Console
 7. Wait for the Oracle console page to refresh and show the new circuit.
 8. Select the new circuit and find the **`OCID`** for connection. Copy this value you need it for Step 2.
 
-### Step 2: Create the FastConnect connection in Insight Console
+### Step 2: Associate the FastConnect Virtual Circuit to the i2lab routing table
+
+In the Oracle Console:
+
+1. Navigate to the DRG named **`drg_i2lab`**.
+2. Under the Resources menu click on **`Virtual circuit attachments`**.
+3. Click on the **`Virtual circuit attachment`** for the FastConnect circuit.
+![Virtual Circuit Attachments](files/oci_drg_vc_att.png)
+4. Press **`Edit`** on the attachment details page that follows.
+5. In the **Edit Attachment** window under the **Choose a DRG route table** select **`i2lab DRG Route Table`**.
+6. Press **`Save changes`**.
+
+### Step 3: Create the FastConnect connection in Insight Console
 
 From Internet2 Insight Console
 
