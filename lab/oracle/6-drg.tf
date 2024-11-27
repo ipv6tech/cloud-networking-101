@@ -43,7 +43,7 @@ resource "oci_core_drg_route_distribution_statement" "i2lab_drg_route_distributi
 /* Disabled for the TechEx 2024 workshop. We will manually create this resource in the Oracle Cloud Console.
 # Fast Connect - Virtual Circuit toward Internet2 Layer 3 Ashburn */
 
-resource "oci_core_virtual_circuit" "generated_oci_core_virtual_circuit" {
+/*resource "oci_core_virtual_circuit" "generated_oci_core_virtual_circuit" {
 	bandwidth_shape_name = "1 Gbps"
 	compartment_id = oci_identity_compartment.i2lab.id
 	display_name = "i2cc-i2lab"
@@ -54,4 +54,4 @@ resource "oci_core_virtual_circuit" "generated_oci_core_virtual_circuit" {
 	provider_service_id = "ocid1.providerservice.oc1.iad.aaaaaaaa2o3hjxotf54yxpkkpzwirciyadm2mc3xxsyaszwoxo6trxvkbrqa" //Internet2 Layer 3 Ashburn
 	type = "PRIVATE"
 	att
-}
+}*/
