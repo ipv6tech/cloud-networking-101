@@ -2,9 +2,6 @@
 
 **_Networking to and inside the Cloud Service Providers_**
 
->[!CAUTION]
->_This repository is still a work in progress._
-
 ## Workshop Objectives
 
 This full day workshop will lead you through a deep dive into cloud networking. As a participant, you will leave this workshop with knowledge of the necessary networking components required to operate a functional cloud environment with dedicated cloud connectivity. The workshop combines lectures with labs to provide hands-on experience with the course concepts.
@@ -25,14 +22,15 @@ Some of the things you will learn during the workshop include
 > - Gather and Introductions (30 minutes)
 > - Lesson: Overview of Internet2 Cloud Connect (20 minutes)
 > - Lesson: Introduction to Insight Console (20 minutes)
-> - Lab 1: Using Insight Console (10 minutes)
+> - [Lab 1: Internet2 Insight Console](lab1.md) (10 minutes)
 > - Lesson: Insight Console use cases (10 minutes)
-
-**Break** 09:30 - 10:00
-
-> - Lesson: Lab overview (15 minutes)
-> - Lab 2: Setting up your lab environment (30 minutes)
+>
+> **Break** 09:30 - 10:00 (30 minutes)
+>
 > - Lesson: Networking in the Cloud(s) (45 minutes)
+> - [Lab 2: Using GitHub Codespaces](lab2.md) (15 minutes)
+> - Lesson: Lab overview (10 minutes)
+> - [Lab 3: Authenticating and Configure CLI tools](lab3.md) (10 - 40 minutes)
 
 **Lunch** 11:30 - 13:00
 
@@ -40,17 +38,21 @@ Some of the things you will learn during the workshop include
 
 **Afternoon** 13:00 - 16:30
 
-> - Lesson: Networking in the Cloud(s) continued...
-> - Lab 3: ...
-
-**Break** 14:30-15:00
-
-> - Labs 4-7
+> - [Lab 4: Infrastructure as Code deployment of CSP lab environments](lab4.md) (10 minutes)
+> - Lesson: Networking Components for each CSP (20 minutes)
+> - Demo: Building Insight Console Connections (15 minutes)
+> - [Lab 5: Building Dedicated Connections to the Cloud](lab5.md) (60 minutes)
+>
+> **Break** 14:30-15:00
+>
+> - [Lab 6: Testing and verifying routing](lab6.md) (20 minutes)
+> - [Lab 7: Verifying Routing Tables with the CSPs _(time permitting)_](lab7.md) (20 minutes)
+> - [Lab 8: Cleaning up (avoiding large bills)](lab8.md) (30 minutes)
 > - Close-out
 
 ## Slides
 
-You can find the [slide deck for the lectures here](slides/cloud_networking_101-20241209.pptx)
+You can find the [slide deck for the lectures here](slides/cloud_networking_101-20241209.pdf)
 
 ## Labs
 
@@ -111,21 +113,36 @@ As you build out your Free Tier accounts keep in mind that the terraform code fo
 
 ---
 
-## TODO
+#### To-do
 
-- [ ] Finish Lab breakouts and documentation
-- [ ] Export slide deck to PDF
-- [ ] Improve diagrams
-- [ ] [Maybe] Rework code to update SSH config file when public IP changes
-- [ ] [Maybe] Breakout slides for each lesson
-- [ ] [Future] Lab solution branches
-- [ ] [Future] IPv6 addressing
-- [ ] [Future] Refactor code to make it easier to switch regions
-- [ ] [Future] Migrate code to OpenTofu
-- [ ] [Future] Develop 2/3/400 level workshop that builds on this workshop
+- [ ] Finish Lab 7
+  - [ ] Azure route table
+  - [ ] Google Cloud routing
+- [ ] Finish slides
+  - [ ] export and publish slides
+- [ ] Improve lab environment diagrams
+  - [X] AWS
+  - [ ] Azure
+  - [X] Google Cloud
+  - [ ] Oracle Cloud
+- [X] Finish Agenda
+- [ ] Final lab run through
+- [ ] Publish final prebuilt
 
----
+#### Future
 
-## Notes
+- [ ] Rework code to update SSH config file when public IP changes
+- [ ] Get budgets working for
+  - [ ] Google Cloud
+  - [ ] Oracle Cloud
+  - [ ] Azure
+- [ ] Change base Dockerfile image to reduce size of prebuilt
+- [ ] Further optimize Devcontainer environment
+- [ ] Breakout slides for each lesson
+- [ ] Branches with IaC for Lab solutions?
+- [ ] IPv6 addressing
+- [ ] Refactor code to make it easier to switch regions
+- [ ] Migrate code to OpenTofu
+- [ ] Develop 2/3/400 level workshop that builds on this workshop
 
-**Google:** Before the workshop it would be helpful if you have your account setup, billing setup, a project for us to build into and Compute API enabled for the project. Send directions for these step to the participants ahead of the workshop.
+## :rocket: [Take me to the labs!](lab/README.md)

@@ -1,24 +1,37 @@
-# Lab 7: Bonus Lab - Verifying Routing Tables with the CSPs
+# Lab 7: Verifying Routing Tables with the CSPs
 
 In this lab we will look at some of the network tools that the CSPs provide to help look at the routing tables and which prefixes are seen by our i2lab environment with that provider.
+
+## Table of Contents
+
+- [AWS Routing](#aws-routing)
+- [Azure Routing](#azure-routing)
+- [Google Cloud Routing](#google-cloud-routing)
+- [Oracle Cloud Routing](#oracle-cloud-routing)
 
 ---
 
 ## AWS Routing
 
-This one is the least straight forward. There is the "cloud native" way to do prefix monitoring and BGP peer state.
-
-This [blog](https://aws.amazon.com/blogs/networking-and-content-delivery/monitor-bgp-status-on-aws-direct-connect-vifs-and-track-prefix-count-advertised-over-transit-vif/) has a great walk-through on alerting and monitoring BGP status and prefix counts. If you have time and would like to try this walk-through free free but make sure to leave enough time for [Lab 8](lab8.md) where we will destroy the lab environments and clean-up resources to avoid paying unnecessary bills.
-
-### Transit gateway route table
+### Transit gateway route table view
 
 Inside the AWS Console one place that you can check to see which routes are being propagated is under the Transit gateway routing table.
 
-To view the Transit gateway routing table
+To view the Transit gateway routing table: Navigate to VPC and find Transit Gateway service in the sidebar menu.
+
+1. Select **Transit gateway route tables**.
+2. Select the **route table**.
+3. Click **routes**.
+
+You should notice the routes that are propagated from the DXGW to the TGW route table match the networks from the other cloud providers.
 
 ![Transit Gateway Routes](files/aws_tgw_routes.png)
 
+### _(Optional) Cloud Native way_
 
+This one is the least straight forward. There is the "cloud native" way to do prefix monitoring and BGP peer state alerting.
+
+This [blog](https://aws.amazon.com/blogs/networking-and-content-delivery/monitor-bgp-status-on-aws-direct-connect-vifs-and-track-prefix-count-advertised-over-transit-vif/) has a great walk-through on alerting and monitoring BGP status and prefix counts. If you have time and would like to try this walk-through, on your own, feel free. Make sure to leave enough time for [Lab 8](lab8.md) where we will destroy the lab environments and clean-up resources to avoid paying unnecessary bills.
 
 ---
 
@@ -32,6 +45,8 @@ How to view the ER routing table:
 
 1. Navigate to the ER service....
 ![View ER Route Table](files/az_er_route_table.png)
+
+---
 
 ## Google Cloud Routing
 

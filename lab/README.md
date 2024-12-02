@@ -2,7 +2,7 @@
 
 The labs leverage GitHub Codespaces with Terraform plans to build out basic environments for each CSP so we aren't spending out time together doing click-ops provision of a base environment. By leveraging GitHub Codespaces we avoid spending time installing tools, polluting your laptop, and hopefully avoid the dreaded "works on my machine".
 
-[Lab 1: Internet2 Insight Console](lab1.md)
+[Lab 1: Setup Internet2 Insight Console](lab1.md)
 
 [Lab 2: Using GitHub Codespaces](lab2.md)
 
