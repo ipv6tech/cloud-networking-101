@@ -188,12 +188,27 @@ If you wish to keep a VNS and router to play with that is fine. Periodically the
 
 There are a few places to consider cleaning up in GitHub.
 
-- **The fork of the Cloud Networking 101 repository**
-  - If you'd like to keep the fork of the repository feel free, if you have improvements feel free to do a PR and if we can use the improvements in a future workshop we will. Otherwise feel free to delete the fork from your account.
-- [**GitHub Codespaces instance**](https://github.com/codespaces)
-  - You can safely, manually, delete the Codespaces instances after you've finished your **`terraform destroy`** for each provider. Or just leave the instance unused for 30 days and it will self delete. You can always launch a new codespace from the original repository or from your fork of the repository in the future.
 - [**GitHub Codespace Secrets**](https://github.com/settings/codespaces) _(used for environment variables)_
   - There are a limit to how many Codespace secrets you can have in your account and likely the tokens will go stale. Of all the GitHub clean-up this is the one that probably makes the most sense to do. Especially if you don't plan to do the labs in the future.
+
+Copy and paste these into the Codespaces Terminal before deleting your Codespace instance to remove all the secrets we created during the labs.
+
+```bash
+gh secret delete TF_VAR_EMAIL -u -R $GITHUB_REPOSITORY
+gh secret delete TF_VAR_ENV -u -R $GITHUB_REPOSITORY
+gh secret delete TF_VAR_AZ_SUBSCRIPTION_ID -u -R $GITHUB_REPOSITORY
+gh secret delete TF_VAR_GC_PROJECT_ID -u -R $GITHUB_REPOSITORY
+gh secret delete TF_VAR_OCI_COMPARTMENT -u -R $GITHUB_REPOSITORY
+gh secret delete TF_VAR_OCI_FINGERPRINT -u -R $GITHUB_REPOSITORY
+gh secret delete TF_VAR_OCI_USER -u -R $GITHUB_REPOSITORY
+gh secret delete TF_VAR_OCI_TENANCY -u -R $GITHUB_REPOSITORY
+```
+
+- **The fork of the Cloud Networking 101 repository**
+  - If you'd like to keep the fork of the repository feel free, if you have improvements feel free to do a PR and if we can use the improvements in a future workshop we will. Otherwise feel free to delete the fork from your account.
+
+- [**GitHub Codespaces instance**](https://github.com/codespaces)
+  - You can safely, manually, delete the Codespaces instances after you've finished your **`terraform destroy`** for each provider. Or just leave the instance unused for 30 days and it will self delete. You can always launch a new codespace from the original repository or from your fork of the repository in the future.
 
 ---
 
