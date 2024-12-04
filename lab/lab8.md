@@ -11,7 +11,8 @@ This Lab will walk you through the steps required to remove the connections and 
 - [Azure Clean-up](#azure-clean-up)
 - [Google Cloud Clean-up](#google-cloud-clean-up)
 - [Oracle Cloud Clean-up](#oracle-cloud-clean-up)
-- [GitHub Cleanup](#github-cleanup)
+- [Insight Console Clean-up](#insight-console-clean-up)
+- [GitHub Clean-up](#github-clean-up)
 
 ---
 
@@ -172,7 +173,18 @@ At this point you should have seen a successful message similar to **`Destroy Co
 
 ---
 
-## GitHub Cleanup
+## Insight Console Clean-up
+
+Don't forget to delete your Insight Console Resources.
+
+1. Virtual Router
+2. Virtual Network Space
+
+If you wish to keep a VNS and router to play with that is fine. Periodically the training organizations and virtual networks spaces will be cleaned out. You are also welcome to create a sub organization under your organization or regional partner for a test environment. If you need help gaining access to an organization that has permissions to create resources, [please reach out to us here](https://noc.net.internet2.edu/help).
+
+---
+
+## GitHub Clean-up
 
 There are a few places to consider cleaning up in GitHub.
 

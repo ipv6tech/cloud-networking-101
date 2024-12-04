@@ -52,7 +52,7 @@ Some of the things you will learn during the workshop include
 
 ## Slides
 
-You can find the [slide deck for the lectures here](slides/cloud_networking_101-20241209.pdf)
+You can find the [slide deck for the lectures here](slides/cloud_networking_101-20241209.pdf).
 
 ## Labs
 
@@ -90,7 +90,6 @@ As you build out your Free Tier accounts keep in mind that the terraform code fo
 ## :rocket: [Take me to the labs!](lab/README.md)
 
 ---
----
 
 ### Further Learning
 
@@ -113,20 +112,17 @@ As you build out your Free Tier accounts keep in mind that the terraform code fo
 
 ---
 
-#### To-do
+### To-do
 
 - [ ] Finish slides
   - [ ] export and publish slides
-- [ ] Final lab run through
-- [ ] Publish final prebuilt
 
-#### Future
+<details><summary><b>Future</b></summary>
 
 - [ ] Rework code to update SSH config file when public IP changes
 - [ ] Get budgets working for
   - [ ] Google Cloud
   - [ ] Oracle Cloud
-  - [ ] Azure
 - [ ] Change base Dockerfile image to reduce size of prebuilt
 - [ ] Further optimize Devcontainer environment
 - [ ] Breakout slides for each lesson
@@ -136,4 +132,4 @@ As you build out your Free Tier accounts keep in mind that the terraform code fo
 - [ ] Migrate code to OpenTofu
 - [ ] Develop 2/3/400 level workshop that builds on this workshop
 
-## :rocket: [Take me to the labs!](lab/README.md)
+</details>
