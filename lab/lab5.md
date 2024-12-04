@@ -50,12 +50,15 @@ This IPv4 addressing is used for the dedicated connections with each provider in
 From within the AWS Console:
 
 1. Search for **Direct Connect**.
-2. Select the new connection and pick **`View details`**.
-3. On the next screen select **`Accept`** for the connection. _(This will take a few minutes)_
+2. Select the checkbox for the new connection and press **`View details`**.
+3. On the next screen press **`Accept`** for the connection.
+4. Wait until the **State** on the new connection changes from **pending** to **available**. _(This will take a few minutes)_
+
+This is they layer2 component of the connection between the AWS infrastructure and the Internet2 infrastructure.
 
 ### Step 3: Configure AWS Direct Connect Gateway with a Transit VIF
 
-After the connection shows as available:
+After the new connection shows as _**available**_:
 
 1. Select **`Virtual Interfaces`** in the left side bar.
 2. Select **`Create virtual interface`**.
@@ -71,8 +74,10 @@ After the connection shows as available:
 12. Enter **`some_secret`** for the **BGP authentication key**.
 13. Select **``Create virtual interface``**.
 
-> **Note:** It typically take a while for the peering state and BGP status to show available. There must be a health check that periodically updates this status.
+> **`NOTE:`** It typically take a while for the peering state and BGP status to show available. There must be a health check that periodically updates this status.
 >![AWS DXGW Peering](files/aws_dxgw_peering.png)
+
+The VIF is the layer3 component of the connection between the AWS infrastructure and the Internet2 infrastructure.
 
 ### Step 4: Associate the TGW with the DXGW
 
@@ -85,9 +90,11 @@ Now that you built the DX connection and the DXGW peering we need to associate t
 5. Under **Allowed prefixes** enter **`10.192.0.0/16`**,**`10.192.1.0/24`**, and **`10.192.0.240/28`**.
 6. Press the orange **`Associate Direct Connect gateway`** button.
 
-> **Note:** This take a good long while, go ahead and move on to the next step and check back periodically.
+> **`NOTE:`** This take a good long while, go ahead and move on to the next step and check back periodically.
 
 ### Step 5: Attach the TGW with the i2lab VPC
+
+This step was completed in the IaC code we used to provision the base resources for our lab environment in AWS. I documented this before finishing the terraform code and thought it was worth leaving here to help understand this networking component. If you wish to practice the workflow for this section you can comment out the code around lines 14-24 in [**lab/aws/6-tgw.tf**](aws/6-tgw.tf). You will need to then do a **`terraform apply`** and wait for the attachment to delete. (This could take a while, maybe 10 minutes.)
 
 The final step for the AWS connectivity in this lab is to attach the transit gateway with the `i2lab` VPC.
 
@@ -103,7 +110,7 @@ The final step for the AWS connectivity in this lab is to attach the transit gat
 
 ![Transit Gateway Attachment](files/tgw-att-1.png)
 
-> **Note:** This take a good long while, go ahead and move on to the next step and check back periodically.
+> **`NOTE:`** This take a good long while, go ahead and move on to another CSP and check back periodically.
 
 </details>
 
@@ -111,6 +118,10 @@ The final step for the AWS connectivity in this lab is to attach the transit gat
 
 <details>
 <summary><b>Azure: Building an ExpressRoute (ER) Connection</b></summary>
+
+### Azure Architecture
+
+![Azure Architecture](files/az_architecture.png)
 
 ### Step 1: Create ExpressRoute circuit
 
@@ -155,7 +166,7 @@ This portion of the circuit creation happens in the Internet2 [Insight Console](
 ![Azure Peering Connection](files/i2cc_azure_peering_2.png)
 5. Press **`Save`**.
 
-> **NOTE:** ExpressRoute service provides a second circuit for redundancy but we'll skip configuring that for the lab.
+> **`NOTE:`** ExpressRoute service provides a second circuit for redundancy but we'll skip configuring that for the lab.
 
 ### Step 3: Create Connection between ExpressRoute and VPN Gateway (VNG)
 
@@ -186,6 +197,8 @@ Using the Terraform plan in [Lab 3](lab3.md) we already created a VNG resource n
 
 The process of building a Partner Interconnect starts in the [Google Cloud Console](https://console.cloud.google.com/hybrid/interconnects/).
 
+### Google Cloud Architecture
+
 ![Google Cloud Architecture](files/gc_architecture.png)
 
 This step generates a pairing key that you use in Internet2 Insight Console. The pairing key is a unique key that lets a service provider identify and connect to your Virtual Private Cloud (VPC) network and associated Cloud Router. The Internet2 Console requires this key to complete the configuration of your VLAN attachment.
@@ -215,6 +228,7 @@ In the Google Cloud Console:
 ![Pairing keys](files/gc_pairing_key.png)
 10. **Pre-activate these VLAN attachments** by selecting **`Enable`**.
 11. In the pop-up window choose **`I UNDERSTAND,PRE-ACTIVATE`**.
+12. Press **`OK`**.
 
 ### Step 2: Create the Internet2 Interconnect to Google Cloud
 
@@ -229,7 +243,7 @@ In the Google Cloud Console:
    - **Max Bandwidth** select **`50 Mb/s`**.
    - **IP Addressing** You can completely skip the IP Addressing for the Internet2 and Peer. _(This just gets overridden by Google.)_
    - **Peer ASN** enter **`16550`**.
-   - _(Optional)_ For the **BGP Authentication Key** enter **`some_secret`**. _(If you set one in the Google Console you'll need to match it here or BGP won't come up.)_
+   - _(Optional)_ For the **BGP Authentication Key** enter **`some_secret`**. _(Google won't force you to use a key here so for this lab you can leave this blank.)_
    - _(Optional)_ For the **Remote Name** you can enter a unique name.
    - _(Optional)_ Enter some details for the **Notes**.
    - Set the **Authoring State** to **`Live`** and live dangerously!
@@ -242,6 +256,10 @@ In the Google Cloud Console:
 
 <details>
 <summary><b>Oracle: Building a FastConnect Connection</b></summary>
+
+### Oracle Cloud Architecture
+
+![Oracle Cloud Architecture](files/oci_architecture.png)
 
 ### Step 1: Create the FastConnect Connection-
 

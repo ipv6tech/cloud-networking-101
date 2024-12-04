@@ -27,7 +27,7 @@ Use the Infrastructure as Code instructions below for each Cloud provider that y
    1. If successful this will output a list of actions that will be performed.
 4. Next we will run `terraform apply -auto-approve`.
 
-> NOTE: This will take a while but should build out the base environment and spin up an instance that we can ssh into.
+> **`NOTE:`** This will take a while but should build out the base environment and spin up an instance that we can ssh into.
 
 ### Verify AWS
 
@@ -54,7 +54,7 @@ Use the Infrastructure as Code instructions below for each Cloud provider that y
    1. If successful this will output a list of actions that will be performed.
 4. Next we will run `terraform apply -auto-approve`.
 
-> NOTE: This one take the longest of all the lab environments to build out, the VNG can take quite some time (up to 45 minutes) to provision. Let this shell sit and open a new shell to work on other environments while you wait.
+> **`NOTE:`** This one take the longest of all the lab environments to build out, the VNG can take quite some time (up to 45 minutes) to provision. Let this shell sit and open a new shell to work on other environments while you wait.
 
 ### Verify Azure
 

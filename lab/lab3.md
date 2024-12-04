@@ -28,7 +28,7 @@ gh secret set TF_VAR_ENV -b "$TF_VAR_ENV" -u -r $GITHUB_REPOSITORY
 <details>
 <summary><b>Prepare AWS</b></summary>
 
-> NOTE: Make sure your AWS account has admin permissions!
+> **`NOTE:`** Make sure your AWS account has admin permissions!
 
 1. To create an AWS security key, you can:
    1. Go to the AWS management console
@@ -58,7 +58,7 @@ At this point you've configured AWS CLI tools with the same permissions as your 
 
 1. From the Codespaces shell run `az login --use-device-code`.
 2. Follow the directions to authenticate the azure cli tools with your account.
-3. From the output in the shell find the line that includes `"id": "000000-0000-0000-0000-00000000"` and copy the string.
+3. From the output in the shell find the line that includes `"id": "000000-0000-0000-0000-00000000"` where the zeros are replaced with an account ID and copy the string.
 4. From the Codespaces shell run `export TF_VAR_AZ_SUBSCRIPTION_ID="<paste the id from above>"` and hit enter.
 
 At this point you've authenticated the Azure CLI tools with the permissions of your user account and exported the subscription_id as an environment variable that will be used by the Terraform plan to build out the Azure i2lab environment.
@@ -90,8 +90,7 @@ At this point you've configured Azure CLI tools with the same permissions as you
 
 Before we can prepare the cli tools to build out our lab environment we have a bit of work to take care of.
 
->[!TIP]
->Hopefully you were able to complete the list below prior to the workshop. If not it's pretty quick to click-ops through these items.
+> **`NOTE:`** Hopefully you were able to complete the list below prior to the workshop. If not it's pretty quick to click-ops through these items.
 
 #### Prerequisites
 

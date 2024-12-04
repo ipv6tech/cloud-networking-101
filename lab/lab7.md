@@ -20,7 +20,7 @@ Inside the AWS Console one place that you can check to see which routes are bein
 To view the Transit gateway routing table: Navigate to VPC and find Transit Gateway service in the sidebar menu.
 
 1. Select **Transit gateway route tables**.
-2. Select the **route table**.
+2. Select the checkbox for the **route table**.
 3. Click **routes**.
 
 You should notice the routes that are propagated from the DXGW to the TGW route table match the networks from the other cloud providers.
@@ -43,19 +43,18 @@ There are two common places in Azure that you can look for routing information. 
 
 How to view the ER routing table:
 
-1. Navigate to the ER service....
+1. Use the portal search to search for the ExpressRoute service.
+2. **Click** on the **`i2cc-lab`** ExpressRoute circuit.
+3. In the left menu bar press **`Peerings`**.
+4. Click on the **Azure private** peering line in the main window. (We're trying to highlight that Azure private line, not actually go into the peering configuration.)
+5. Press **View route table**.
 ![View ER Route Table](files/az_er_route_table.png)
 
 ---
 
 ## Google Cloud Routing
 
-From the Cloud Router we can see what the routing table looks like.
-
-### Cloud Router Routing Table
-
-1. Navigate to Google Cloud Router Service
-2. Verify
+The best place in Google Cloud to view what the routing table looks like is from within the VPC.
 
 ### VPC Effective Routes
 

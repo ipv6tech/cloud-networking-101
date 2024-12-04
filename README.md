@@ -115,17 +115,8 @@ As you build out your Free Tier accounts keep in mind that the terraform code fo
 
 #### To-do
 
-- [ ] Finish Lab 7
-  - [ ] Azure route table
-  - [ ] Google Cloud routing
 - [ ] Finish slides
   - [ ] export and publish slides
-- [ ] Improve lab environment diagrams
-  - [X] AWS
-  - [ ] Azure
-  - [X] Google Cloud
-  - [ ] Oracle Cloud
-- [X] Finish Agenda
 - [ ] Final lab run through
 - [ ] Publish final prebuilt
 
