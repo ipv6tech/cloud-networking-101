@@ -6,9 +6,7 @@
 
 This full day workshop will lead you through a deep dive into cloud networking. As a participant, you will leave this workshop with knowledge of the necessary networking components required to operate a functional cloud environment with dedicated cloud connectivity. The workshop combines lectures with labs to provide hands-on experience with the course concepts.
 
-This full day workshop combine lecture with hands-on labs.
-
-Some of the things you will learn during the workshop include
+Some of the things you will learn during the workshop include:
 
 - Overview and benefits of Internet2’s Cloud Connect service
 - Use of Internet2 [Insight Console](https://console.internet2.edu) used to build dedicated connections to the Cloud Service Providers (CSP's)

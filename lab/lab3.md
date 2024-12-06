@@ -96,9 +96,6 @@ Before we can prepare the cli tools to build out our lab environment we have a b
 
 - [Create a Google Cloud Account](https://cloud.google.com/free?hl=en).
 - [Setup a billing account](https://cloud.google.com/billing/docs/how-to/create-billing-account#create-new-billing-account).
-- [Create a project](https://cloud.google.com/resource-manager/docs/creating-managing-projects#creating_a_project) for the lab to provision into, I recommend something like `i2lab-2024` or `techex2024` for the project name.
-- [Enable billing for the new project](https://cloud.google.com/billing/docs/how-to/modify-project).
-- Enable Compute API for the project. (The easy way to do this is to navigate into the [VPC Networks](https://console.cloud.google.com/networking/networks) and click "Enable Compute API" in the console.)
 
 #### Step 1: Authenticate the gcloud sdk tools with your Google Cloud account
 
@@ -108,18 +105,17 @@ Before we can prepare the cli tools to build out our lab environment we have a b
 4. When prompted to `Sign in to Google Cloud SDK` Press `Continue`.
 5. When prompted that `Google Cloud SDK wants access to your Google Account` press `Allow`.
 6. Press `Copy` for the verification code.
-7. Paste the verification code into the Codespaces shell and hit `enter`.
-8. From the list choose the project you created for this workshop.
-9. When prompted `to configure a default Compute Region and Zone` press `enter`.
-10. Look for `us-east4-a` and `type the number` for that region and zone and press `enter`.
-11. In the Codespaces shell run `gcloud projects list` and note the PROJECT_ID for your new project.
-12. In the Codespaces shell run `export TF_VAR_GC_PROJECT_ID="<PROJECT_ID>"`
+7. Paste the verification code into the Codespaces shell and hit **`enter`**.
+8. From the list choose **`Create a new project`**.
+9. Give the new project a name (e.g. **`i2lab-techex2024-YourInitials`**). _(`Note:`This must be globally unique.)_
+10. In the Codespaces shell run `gcloud projects list` and note the PROJECT_ID for your new project.
+11. In the Codespaces shell run `export TF_VAR_GC_PROJECT_ID="<PROJECT_ID>"`
 
 #### Step 2: Push our Google Cloud environment variables into Codespaces Secrets
 
 Let's push the environment variable(s) we setup in the previous section our Codespaces Secrets. This is how we can get securely set and get the environment variables to persist between Codespace restarts.
 
-Copy and paste the following into a Codespace Shell:
+1. Copy and paste the following into a Codespace Shell:
 
 ```bash
 gh secret set TF_VAR_GC_PROJECT_ID -b "$TF_VAR_GC_PROJECT_ID" -u -r $GITHUB_REPOSITORY
@@ -137,13 +133,23 @@ gh secret set TF_VAR_GC_PROJECT_ID -b "$TF_VAR_GC_PROJECT_ID" -u -r $GITHUB_REPO
 6. Press `Copy` for the verification code.
 7. Paste the verification code into the Codespaces shell and hit `enter`.
 
-#### Step 4: Delete Google Cloud default VPC Network
+#### Step 4: Enable billing for the new project
 
-In the new project you created you likely have a default VPC Network. Let's go ahead and remove that mess.
+- Enable billing for the new project [Billing](https://console.cloud.google.com/billing/projects).
+- Under "My Projects" find the new i2lab project.
+  - Under **Actions** select **Change billing**. _Need more help? See [Enable billing for the new project](https://cloud.google.com/billing/docs/how-to/modify-project)._
+![Change Billing](files/gc_billing.png)
 
-1. To verify there is a _default_ VPC Network from the Codespaces shell `gcloud compute networks list`.
-2. From the Codespaces shell run `gcloud compute networks delete default`.
-3. At the "Do you want to continue." prompt hit `enter`.
+#### Step 5: Enable APIs
+
+Next we will enable a couple APIs that are needed to provision the lab resources.
+
+Copy and paste the commands below into the Codespaces shell. This will take a bit of time to complete.
+
+```bash
+gcloud services enable servicenetworking.googleapis.com --project="$TF_VAR_GC_PROJECT_ID"
+gcloud services enable compute.googleapis.com --project="$TF_VAR_GC_PROJECT_ID"
+```
 
 **Congratulations!**
 

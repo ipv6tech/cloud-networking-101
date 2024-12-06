@@ -141,9 +141,9 @@ At this point you should have seen a successful message similar to **`Destroy Co
 > [!TIP]
 > If you instead receive an error, check the error message and see which resource the terraform destroy process got hung up on. Sometimes you might have missed deleting a resource we added manually and will need to go into the Console and remove that resource. Other times you might just need to run the terraform destroy process again after a short wait. If you are stuck here, grab one of the instructors.
 
-### Step 4: Delete Google Cloud Project
+### Step 4: _(Optional)_ Remove the workshop project
 
-If you do not plan on reusing the project that you created for this workshop you can go ahead and delete the project at this time.
+1. From the Codespaces shell run **`gcloud projects delete $TF_VAR_GC_PROJECT_ID`**.
 
 ---
 
@@ -212,8 +212,12 @@ gh secret delete TF_VAR_OCI_TENANCY -u -R $GITHUB_REPOSITORY
 
 ---
 
-## Thank you:exclamation: :pray:
+## Thank you
 
-Thanks for attending the workshop, I hope you got something out of the workshop and are more comfortable creating dedicated connections with Internet2 Cloud Connect and using Insight Console and Internet2 Virtual Networks with the Cloud Connect partners.
+Thank you for attending the workshop :exclamation: :pray:
 
-If you found this valuable and would like to see similar workshops in the future please let us know.
+I hope you learned something new from the workshop and are more comfortable creating dedicated connections with [Internet2 Cloud Connect](https://internet2.edu/services/cloud-connect/) and using [Insight Console](https://console.internet2.edu) and Internet2 Virtual Networks with the Cloud Connect partners.
+
+Keep a look out for other opportunities for training at the [Internet2 CLASS website](https://internet2.edu/cloud/cloud-learning-and-skills-sessions/).
+
+If you found the workshop valuable and would like to see similar workshops in the future please let us know!
