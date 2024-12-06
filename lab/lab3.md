@@ -32,17 +32,17 @@ gh secret set TF_VAR_ENV -b "$TF_VAR_ENV" -u -r $GITHUB_REPOSITORY
 
 1. To create an AWS security key, you can:
    1. Go to the AWS management console
-   2. Click the `Profile name` pull down menu in the upper right hand of the screen.
-   3. Click `Security Credentials`
-   4. Find the Access Keys section and press `Create access key`.
-   5. Select `Other` and press `Next`.
+   2. Click the **`Profile name`** pull down menu in the upper right hand of the screen.
+   3. Click **`Security Credentials`**.
+   4. Find the Access Keys section and press **`Create access key`**.
+   5. Select **`Other`** and press **`Next`**.
    6. _(Optional) Provide a description.
-   7. Press `Create access key`.
+   7. Press **`Create access key`**.
    8. Click Show Access Key
-   9. Press `Download .csv file` and save the keys on your local computer. (Leave this window/tab open)
-2. From the Codespaces shell run `aws configure`.
+   9. Press **`Download .csv file`** and save the keys on your local computer. (Leave this window/tab open)
+2. From the Codespaces shell run **`aws configure`**.
 3. Copy and Paste the Access Key and Secret Access key from the AWS console into the Codespace shell when prompted.
-4. At the prompt for region enter `us-east-1`.
+4. At the prompt for region enter **`us-east-1`**.
 5. At the prompt for Default output format [None]: you can accept the default of None and hit enter.
 
 At this point you've configured AWS CLI tools with the same permissions as your account.
@@ -56,10 +56,10 @@ At this point you've configured AWS CLI tools with the same permissions as your 
 
 #### Step 1: Authenticate Azure
 
-1. From the Codespaces shell run `az login --use-device-code`.
+1. From the Codespaces shell run **`az login --use-device-code`**.
 2. Follow the directions to authenticate the azure cli tools with your account.
-3. From the output in the shell find the line that includes `"id": "000000-0000-0000-0000-00000000"` where the zeros are replaced with an account ID and copy the string.
-4. From the Codespaces shell run `export TF_VAR_AZ_SUBSCRIPTION_ID="<paste the id from above>"` and hit enter.
+3. From the output in the shell find the line that includes **`"id": "000000-0000-0000-0000-00000000"`** where the zeros are replaced with an account ID and copy the string.
+4. From the Codespaces shell run **`export TF_VAR_AZ_SUBSCRIPTION_ID="<paste the id from above>"`** and hit enter.
 
 At this point you've authenticated the Azure CLI tools with the permissions of your user account and exported the subscription_id as an environment variable that will be used by the Terraform plan to build out the Azure i2lab environment.
 
@@ -99,17 +99,17 @@ Before we can prepare the cli tools to build out our lab environment we have a b
 
 #### Step 1: Authenticate the gcloud sdk tools with your Google Cloud account
 
-1. From the Codespaces shell run `gcloud init`.
-2. At the prompt to sign in hit `enter`.
+1. From the Codespaces shell run **`gcloud init`**.
+2. At the prompt to sign in hit **`enter`**.
 3. Copy the very long URL into a new web browser window/tab and sign in with your Google Cloud account.
-4. When prompted to `Sign in to Google Cloud SDK` Press `Continue`.
-5. When prompted that `Google Cloud SDK wants access to your Google Account` press `Allow`.
-6. Press `Copy` for the verification code.
+4. When prompted to **`Sign in to Google Cloud SDK`** Press **`Continue`**.
+5. When prompted that **`Google Cloud SDK wants access to your Google Account`** press **`Allow`**.
+6. Press **`Copy`** for the verification code.
 7. Paste the verification code into the Codespaces shell and hit **`enter`**.
 8. From the list choose **`Create a new project`**.
 9. Give the new project a name (e.g. **`i2lab-techex2024-YourInitials`**). _(`Note:`This must be globally unique.)_
-10. In the Codespaces shell run `gcloud projects list` and note the PROJECT_ID for your new project.
-11. In the Codespaces shell run `export TF_VAR_GC_PROJECT_ID="<PROJECT_ID>"`
+10. In the Codespaces shell run **`gcloud projects list`** and note the PROJECT_ID for your new project.
+11. In the Codespaces shell run **`export TF_VAR_GC_PROJECT_ID="<PROJECT_ID>"`**.
 
 #### Step 2: Push our Google Cloud environment variables into Codespaces Secrets
 
@@ -121,17 +121,17 @@ Let's push the environment variable(s) we setup in the previous section our Code
 gh secret set TF_VAR_GC_PROJECT_ID -b "$TF_VAR_GC_PROJECT_ID" -u -r $GITHUB_REPOSITORY
 ```
 
-2. In the message box that pops up press `Reload to apply`![Reload to apply](files/reload_to_apply.png)
+2. In the message box that pops up press **`Reload to apply`**![Reload to apply](files/reload_to_apply.png)
 
 #### Step 3: Next create credentials for our Codespaces shell
 
-1. From the Codespaces shell run `gcloud auth application-default login`.
-2. Copy the long URL from the Codespaces shell into a new web browser window.
+1. From the Codespaces shell run **`gcloud auth application-default login`**.
+2. **`Copy`** the long URL from the Codespaces shell into a new web browser window.
 3. Sign in to your Google Cloud Account.
-4. When prompted to `Sign in to Google Auth Library` Press `Continue`.
-5. When prompted that `Google Auth Library wants access to your Google Account` press `Allow`.
-6. Press `Copy` for the verification code.
-7. Paste the verification code into the Codespaces shell and hit `enter`.
+4. When prompted to **`Sign in to Google Auth Library`** press **`Continue`**.
+5. When prompted that **`Google Auth Library wants access to your Google Account`** press **`Allow`**.
+6. Press **`Copy`** for the verification code.
+7. Paste the verification code into the Codespaces shell and hit **`enter`**.
 
 #### Step 4: Enable billing for the new project
 
@@ -165,28 +165,28 @@ I wasn't kidding about the process to get this one ready for our lab. At this po
 #### Step 1: Create a Compartment
 
 1. [Follow this link](https://cloud.oracle.com/identity/compartments) to navigate to the OCI compartments service.
-2. Press `Create Compartment` to create a new Compartment for the lab.![Create Compartment](files/oci_create_compartment.png)
-3. Name the Lab compartment `i2lab`.
+2. Press **`Create Compartment`** to create a new Compartment for the lab.![Create Compartment](files/oci_create_compartment.png)
+3. Name the Lab compartment **`i2lab`**.
 4. Provide a description for the new compartment.
-5. Press `Create Compartment`.
+5. Press **`Create Compartment`**.
 6. Select the new compartment name in the list of compartments. (You might have to refresh the page.)
-7. Under Compartment Information use the `copy` link next to the OCID.
-8. Set the OCI compartment variable: `export TF_VAR_OCI_COMPARTMENT="<paste_compartment_ocid>"`.
+7. Under Compartment Information use the **`copy`** link next to the OCID.
+8. Set the OCI compartment variable: **`export TF_VAR_OCI_COMPARTMENT="<paste_compartment_ocid>"`**.
 
 #### Step 2: Create API keys and set environment variables
 
-1. In a Codespaces shell run `cat ~/.oci/oci_key_public.pem` and copy the output.
+1. In a Codespaces shell run **`cat ~/.oci/oci_key_public.pem`** and copy the output.
 2. In the OCI Console navigation to [My profile](https://cloud.oracle.com/identity/domains/my-profile).
-3. Under the Resources section on the bottom left select `API Keys`.
-4. Select `Add API Key`.
-5. Select `Paste Public Keys`.
+3. Under the Resources section on the bottom left select **`API Keys`**.
+4. Select **`Add API Key`**.
+5. Select **`Paste Public Keys`**.
 6. Paste the output from the Codespaces shell in step #1, including the lines with BEGIN PUBLIC KEY and END PUBLIC KEY.
-7. Select `Add`. Keep this window open for the next section.
+7. Select **`Add`**. Keep this window open for the next section.
 8. From the Codespaces shell
-   1. Set the OCI tenancy variable: `export TF_VAR_OCI_TENANCY="<paste_tenancy_ocid>"`.
-   2. Set the OCI user variable: `export TF_VAR_OCI_USER="<paste_user_ocid>"`.
-   3. Set the OCI fingerprint variable: `export TF_VAR_OCI_FINGERPRINT="<paste_fingerprint>"`.
-   4. _(Optional)_ Set the OCI region variable: `export TF_VAR_OCI_REGION="<paste_region>"`.
+   1. Set the OCI tenancy variable: **`export TF_VAR_OCI_TENANCY="<paste_tenancy_ocid>"`**.
+   2. Set the OCI user variable: **`export TF_VAR_OCI_USER="<paste_user_ocid>"`**.
+   3. Set the OCI fingerprint variable: **`export TF_VAR_OCI_FINGERPRINT="<paste_fingerprint>"`**.
+   4. _(Optional)_ Set the OCI region variable: **`export TF_VAR_OCI_REGION="<paste_region>"`**.
 
 #### Step 3: Push our OCI environment variables into Codespaces Secrets
 
@@ -194,20 +194,20 @@ Let's push the environment variable(s) we setup in the previous section our Code
 
 1. Copy and paste the following into a Codespace Shell:
 
->```bash
->gh secret set TF_VAR_OCI_COMPARTMENT -b "$TF_VAR_OCI_COMPARTMENT" -u -r $GITHUB_REPOSITORY
->gh secret set TF_VAR_OCI_TENANCY -b "$TF_VAR_OCI_TENANCY" -u -r $GITHUB_REPOSITORY
->gh secret set TF_VAR_OCI_USER -b "$TF_VAR_OCI_USER" -u -r $GITHUB_REPOSITORY
->gh secret set TF_VAR_OCI_FINGERPRINT -b "$TF_VAR_OCI_FINGERPRINT" -u -r $GITHUB_REPOSITORY
->```
+```bash
+gh secret set TF_VAR_OCI_COMPARTMENT -b "$TF_VAR_OCI_COMPARTMENT" -u -r $GITHUB_REPOSITORY
+gh secret set TF_VAR_OCI_TENANCY -b "$TF_VAR_OCI_TENANCY" -u -r $GITHUB_REPOSITORY
+gh secret set TF_VAR_OCI_USER -b "$TF_VAR_OCI_USER" -u -r $GITHUB_REPOSITORY
+gh secret set TF_VAR_OCI_FINGERPRINT -b "$TF_VAR_OCI_FINGERPRINT" -u -r $GITHUB_REPOSITORY
+```
 
 2. Optional:
 
-> ```bash
-> gh secret set TF_VAR_OCI_REGION -b "$TF_VAR_OCI_REGION" -u -r $GITHUB_REPOSITORY
-> ```
+```bash
+gh secret set TF_VAR_OCI_REGION -b "$TF_VAR_OCI_REGION" -u -r $GITHUB_REPOSITORY
+```
 
-3. In the message box that pops up press `Reload to apply`![Reload to apply](files/reload_to_apply.png)
+3. In the message box that pops up press **`Reload to apply`**![Reload to apply](files/reload_to_apply.png)
 
 <!--
 Want to write these out to a file instead?

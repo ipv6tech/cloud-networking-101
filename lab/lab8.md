@@ -54,9 +54,9 @@ Next we need to delete the virtual interface toward the Internet2 virtual router
 
 ### Step 4: Terraform Clean-up
 
-1. In the Codespace shell run `cd $CODESPACE_VSCODE_FOLDER/lab/aws`.
-2. Next run `terraform destroy`.
-3. Type `yes` at the prompt to proceed.
+1. In the Codespace shell run **`cd $CODESPACE_VSCODE_FOLDER/lab/aws`**.
+2. Next run **`terraform destroy`**.
+3. Type **`yes`** at the prompt to proceed.
 
 >[!NOTE]
 This will take around 5 minutes to complete.
@@ -88,9 +88,9 @@ At this point you should have seen a successful message similar to **`Destroy Co
 
 ### Step 3. Terraform Clean-up Azure
 
-1. In the Codespace shell run `cd $CODESPACE_VSCODE_FOLDER/lab/azure`.
-2. Next run `terraform destroy`.
-3. Type `yes` at the prompt to proceed.
+1. In the Codespace shell run **`cd $CODESPACE_VSCODE_FOLDER/lab/azure`**.
+2. Next run **`terraform destroy`**.
+3. Type **`yes`** at the prompt to proceed.
 
 >[!NOTE]
 This will take about 10-15 minutes to complete.
@@ -129,9 +129,9 @@ At this point you should have seen a successful message similar to **`Destroy Co
 
 1. In the Google Cloud Console Navigate to the Partner Interconnect service delete the connection to Internet2 Virtual Networks.
 2. From the Internet2 Virtual Router delete the Partner Interconnect.
-3. In the Codespace shell run `cd $CODESPACE_VSCODE_FOLDER/lab/google`.
-4. Next run `terraform destroy`.
-5. Type `yes` at the prompt to proceed.
+3. In the Codespace shell run **`cd $CODESPACE_VSCODE_FOLDER/lab/google`**.
+4. Next run **`terraform destroy`**.
+5. Type **`yes`** at the prompt to proceed.
 
 >[!NOTE]
 >This will take about 2-3 minutes to complete.
@@ -159,9 +159,9 @@ At this point you should have seen a successful message similar to **`Destroy Co
 
 ### Step 2: Terraform destroy the Oracle Cloud i2lab environment
 
-1. In the Codespace shell run `cd $CODESPACE_VSCODE_FOLDER/lab/oracle`.
-2. Next run `terraform destroy`.
-3. Type `yes` at the prompt to proceed.
+1. In the Codespace shell run **`cd $CODESPACE_VSCODE_FOLDER/lab/oracle`**.
+2. Next run **`terraform destroy`**.
+3. Type **`yes`** at the prompt to proceed.
 
 >[!NOTE]
 >This will take about 5-8 minutes to complete.

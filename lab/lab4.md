@@ -19,13 +19,13 @@ Use the Infrastructure as Code instructions below for each Cloud provider that y
 
 ### Provision AWS
 
-1. In the Codespaces shell run `cd $CODESPACE_VSCODE_FOLDER/lab/aws`.
-2. Next run `terraform init`.
+1. In the Codespaces shell run **`cd $CODESPACE_VSCODE_FOLDER/lab/aws`**.
+2. Next run **`terraform init`**.
 ![terraform_init](files/tf_init_aws.png)
-3. Next run `terraform plan`.
+3. Next run **`terraform plan`**.
 ![terraform_plan](files/tf_plan.png)
    1. If successful this will output a list of actions that will be performed.
-4. Next we will run `terraform apply -auto-approve`.
+4. Next we will run **`terraform apply -auto-approve`**.
 
 > **`NOTE:`** This will take a while but should build out the base environment and spin up an instance that we can ssh into.
 
@@ -46,13 +46,13 @@ Use the Infrastructure as Code instructions below for each Cloud provider that y
 
 ### Provision Azure
 
-1. In the Codespaces shell run `cd $CODESPACE_VSCODE_FOLDER/lab/azure`.
-2. Next run `terraform init`.
+1. In the Codespaces shell run **`cd $CODESPACE_VSCODE_FOLDER/lab/azure`**.
+2. Next run **`terraform init`**.
 ![terraform_init](files/tf_init_azure.png)
-3. Next run `terraform plan`.
+3. Next run **`terraform plan`**.
 ![terraform_plan](files/tf_plan.png)
    1. If successful this will output a list of actions that will be performed.
-4. Next we will run `terraform apply -auto-approve`.
+4. Next we will run **`terraform apply -auto-approve`**.
 
 > **`NOTE:`** This one take the longest of all the lab environments to build out, the VNG can take quite some time (up to 45 minutes) to provision. Let this shell sit and open a new shell to work on other environments while you wait.
 
@@ -73,13 +73,13 @@ Use the Infrastructure as Code instructions below for each Cloud provider that y
 
 ### Provision Google Cloud
 
-1. In the Codespaces shell run `cd $CODESPACE_VSCODE_FOLDER/lab/google`.
-2. Next run `terraform init`.
+1. In the Codespaces shell run **`cd $CODESPACE_VSCODE_FOLDER/lab/google`**.
+2. Next run **`terraform init`**.
 ![terraform_init](files/tf_init_google.png)
-3. Next run `terraform plan`.
+3. Next run **`terraform plan`**.
 ![terraform_plan](files/tf_plan.png)
    1. If successful this will output a list of actions that will be performed.
-4. Next we will run `terraform apply -auto-approve`.
+4. Next we will run **`terraform apply -auto-approve`**.
 
 ### Verify Google Cloud
 
@@ -98,13 +98,13 @@ Use the Infrastructure as Code instructions below for each Cloud provider that y
 
 ### Provision Oracle Cloud
 
-1. In the Codespaces shell run `cd $CODESPACE_VSCODE_FOLDER/lab/oracle`.
-2. Next run `terraform init`.
+1. In the Codespaces shell run **`cd $CODESPACE_VSCODE_FOLDER/lab/oracle`**.
+2. Next run **`terraform init`**.
 ![terraform_init](files/tf_init_oracle.png)
-3. Next run `terraform plan`.
+3. Next run **`terraform plan`**.
 ![terraform_plan](files/tf_plan.png)
    1. If successful this will output a list of actions that will be performed.
-4. Next we will run `terraform apply -auto-approve`.
+4. Next we will run **`terraform apply -auto-approve`**.
 
 ### Verify SSH Access to Oracle
 
@@ -119,7 +119,7 @@ Use the Infrastructure as Code instructions below for each Cloud provider that y
 ### Verify SSH Access
 
 - Can you SSH to the instance?
-  - The terraform plans should create an SSH config entry so you can use the Codespace shell to run `ssh aws`, `ssh azure`, `ssh google`, or `ssh oracle`.
+  - The terraform plans should create an SSH config entry so you can use the Codespace shell to run **`ssh aws`**, **`ssh azure`**, **`ssh google`**, or **`ssh oracle`**.
   - Can you reach the instance via SSH?
 
 At this point you have provisioned the base lab environment with two or more cloud providers.

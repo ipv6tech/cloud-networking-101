@@ -24,8 +24,7 @@ The labs leverage GitHub Codespaces with Terraform plans to build out basic envi
 > **The following non best practices are adhered to these labs:**
 >
 > - Building the slowest speed connection possible
-> - Building non-redundant connections
-> - Building resources in a single region,zone, etc
+> - Ignoring redundancy (single region, single zones, single connections, etc.)
 > - Not using IPv6 in this version of the workshop
 > - Using minimal security with wide open access
 > - Local state for Terraform plans
