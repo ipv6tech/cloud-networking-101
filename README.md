@@ -110,11 +110,6 @@ As you build out your Free Tier accounts keep in mind that the terraform code fo
 
 ---
 
-### To-do
-
-- [ ] Finish slides
-  - [ ] export and publish slides
-
 <details><summary><b>Future</b></summary>
 
 - [ ] Rework code to update SSH config file when public IP changes
