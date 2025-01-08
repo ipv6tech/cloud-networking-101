@@ -17,8 +17,8 @@ resource "azurerm_consumption_budget_resource_group" "i2lab" {
   time_grain = "Monthly"
 
   time_period {
-    start_date = "2024-12-01T00:00:00Z"
-    end_date   = "2025-10-01T00:00:00Z"
+    start_date = "2025-01-01T00:00:00Z"
+    end_date   = "2025-11-01T00:00:00Z"
   }
 
   filter {
