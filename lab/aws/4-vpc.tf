@@ -11,8 +11,8 @@ resource "aws_vpc" "i2lab" {
 
 # Public subnet for VPC
 resource "aws_subnet" "public" {
-  cidr_block = var.PUBLIC_SUBNET_CIDR_BLOCK
-  vpc_id     = aws_vpc.i2lab.id
+  cidr_block        = var.PUBLIC_SUBNET_CIDR_BLOCK
+  vpc_id            = aws_vpc.i2lab.id
   availability_zone = var.AVAILABILITY_ZONE
   tags = {
     Name        = "public-${var.ENV}"
@@ -22,8 +22,8 @@ resource "aws_subnet" "public" {
 
 # TGW subnet for attachments
 resource "aws_subnet" "tgw" {
-  cidr_block = var.TGW_SUBNET_CIDR_BLOCK
-  vpc_id     = aws_vpc.i2lab.id
+  cidr_block        = var.TGW_SUBNET_CIDR_BLOCK
+  vpc_id            = aws_vpc.i2lab.id
   availability_zone = var.AVAILABILITY_ZONE
   tags = {
     Name        = "tgw-${var.ENV}"
@@ -39,7 +39,7 @@ resource "aws_route_table" "public" {
     gateway_id = aws_internet_gateway.igw_i2lab.id
   }
   route {
-    cidr_block = "10.0.0.0/8"
+    cidr_block         = "10.0.0.0/8"
     transit_gateway_id = aws_ec2_transit_gateway.tgw.id
   }
   tags = {
