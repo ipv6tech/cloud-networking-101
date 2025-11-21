@@ -34,7 +34,7 @@ variable "AVAILABILITY_ZONE" {
 variable "INSTANCE_TYPE" {
   description = "Type of AWS instance to deploy"
   type        = string
-  default     = "t2.micro" # use t2.micro if you are "free tier eligible" otherwise t3.nano is less expensive
+  default     = "t3.micro" # use t3.micro if you are "free tier eligible" otherwise t3.nano is less expensive
 }
 # set ssh key name and location
 variable "PUBLIC_KEY" {
