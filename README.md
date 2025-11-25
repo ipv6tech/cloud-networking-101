@@ -4,49 +4,51 @@
 
 ## Workshop Objectives
 
-This full day workshop will lead you through a deep dive into cloud networking. As a participant, you will leave this workshop with knowledge of the necessary networking components required to operate a functional cloud environment with dedicated cloud connectivity. The workshop combines lectures with labs to provide hands-on experience with the course concepts.
+This half day workshop will guide participants through establishing multi-cloud connectivity using Internet2 Cloud Router. Participants will build and configure direct connections between two or more cloud service providers (CSPs) and verify routing functionality through Internet2's Cloud Connect service. By the end of this session, attendees will have practical experience with Internet2's Insight Console Virtual Networks feature and understand how to implement secure, high-performance multi-cloud networking solutions.
 
-Some of the things you will learn during the workshop include:
+**By the end of this tutorial, participants will be able to:**
 
-- Overview and benefits of Internet2’s Cloud Connect service
-- Use of Internet2 [Insight Console](https://console.internet2.edu) used to build dedicated connections to the Cloud Service Providers (CSP's)
-- Networking components supporting dedicated connectivity for each of the Cloud Service Providers.
-- Establish dedicated connectivity and route traffic between multiple clouds.
+- Understand the concepts and benefits of multi-cloud networking
+- Navigate Internet2's [Insight Console](https://console.internet2.edu) to manage cloud connectivity
+- Configure Internet2 Cloud Router to connect multiple cloud service providers
+- Set up routing between cloud environments
+- Verify routing and connectivity between cloud providers
+- Implement best practices for multi-cloud network management
+
+**Audience:**
+
+- IT professionals managing campus network infrastructure
+- Research computing support staff
+- Cloud administrators looking to optimize connectivity between cloud providers
+- Network engineers interested in implementing multi-cloud solutions
+
+**Prerequisites:**
+
+- Basic understanding of networking concepts (IP addressing, routing)
+- Familiarity with a couple major cloud providers (AWS, Azure, GCP, Oracle Cloud)
 
 ## Agenda
 
-**Morning** 08:00 - 11:30
+**Monday, December 8 2025:** 08:00 - 11:30
 
-> - Gather and Introductions (30 minutes)
-> - Lesson: Overview of Internet2 Cloud Connect (20 minutes)
-> - Lesson: Introduction to Insight Console (20 minutes)
-> - [Lab 1: Internet2 Insight Console](lab/lab1.md) (10 minutes)
-> - Lesson: Insight Console use cases (10 minutes)
->
-> **Break** 09:30 - 10:00 (30 minutes)
->
-> - Lesson: Networking in the Cloud(s) (45 minutes)
-> - [Lab 2: Using GitHub Codespaces](lab/lab2.md) (15 minutes)
+> - Gather and Introductions (10 minutes)
+> - Lesson: Introduction to Insight Console (10 minutes)
 > - Lesson: Lab overview (10 minutes)
+> - [Lab 1: Internet2 Insight Console](lab/lab1.md) (10 minutes)
+> - [Lab 2: Using GitHub Codespaces](lab/lab2.md) (15 minutes)
 > - [Lab 3: Authenticating and Configure CLI tools](lab/lab3.md) (10 - 40 minutes)
-
-**Lunch** 11:30 - 13:00
-
-> _Included_ On-site
-
-**Afternoon** 13:00 - 16:30
-
+>  
+> **Break** (as needed)
+> 
 > - [Lab 4: Infrastructure as Code deployment of CSP lab environments](lab/lab4.md) (10 minutes)
-> - Lesson: Networking Components for each CSP (20 minutes)
-> - Demo: Building Insight Console Connections (15 minutes)
 > - [Lab 5: Building Dedicated Connections to the Cloud](lab/lab5.md) (60 minutes)
->
-> **Break** 14:30-15:00
->
 > - [Lab 6: Testing and verifying routing](lab/lab6.md) (20 minutes)
 > - [Lab 7: Verifying Routing Tables with the CSPs _(time permitting)_](lab/lab7.md) (20 minutes)
 > - [Lab 8: Cleaning up (avoiding large bills)](lab/lab8.md) (30 minutes)
 > - Close-out
+>
+>**Lunch** 11:30 - 13:00
+> (_Included_ On-site)
 
 ## Slides
 
@@ -76,7 +78,7 @@ It's helpful if you have some prior experience with _GNU/Linux_, [_Git_](https:/
 
 ### Free Tier Services
 
-As you build out your Free Tier accounts keep in mind that the terraform code for the Cloud Service Provider (lab) environments and the GitHub Codespaces are preconfigured to run in the US-East regions. If you are able to use those regions for this workshop it should simplify things.
+As you build out your Free Tier accounts keep in mind that the infrastructure code for the Cloud Service Provider (lab) environments and the GitHub Codespaces are preconfigured to run in the US-East regions. If you are able to use those regions for this workshop it should simplify things.
 
 > - [AWS Free Tier](https://aws.amazon.com/free)
 > - [Azure Free Services](https://azure.microsoft.com/en-us/pricing/free-services)
@@ -113,16 +115,11 @@ As you build out your Free Tier accounts keep in mind that the terraform code fo
 <details><summary><b>Future</b></summary>
 
 - [ ] Rework code to update SSH config file when public IP changes
-- [ ] Get budgets working for
-  - [ ] Google Cloud
-  - [ ] Oracle Cloud
 - [ ] Change base Dockerfile image to reduce size of prebuilt
 - [ ] Further optimize Devcontainer environment
-- [ ] Breakout slides for each lesson
 - [ ] Branches with IaC for Lab solutions?
 - [ ] IPv6 addressing
 - [ ] Refactor code to make it easier to switch regions
-- [ ] Migrate code to OpenTofu
 - [ ] Develop 2/3/400 level workshop that builds on this workshop
 
 </details>

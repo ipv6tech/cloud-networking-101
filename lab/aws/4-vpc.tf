@@ -20,6 +20,16 @@ resource "aws_subnet" "public" {
   }
 }
 
+# additional Public subnets for VPC
+resource "aws_subnet" "public_subnets" {
+  count      = length(var.public_subnet_cidrs)
+  vpc_id     = aws_vpc.i2lab.id
+  cidr_block = element(var.public_subnet_cidrs, count.index)
+  tags = {
+    Name = "Public Subnet ${count.index + 1}"
+  }
+}
+
 # TGW subnet for attachments
 resource "aws_subnet" "tgw" {
   cidr_block        = var.TGW_SUBNET_CIDR_BLOCK
@@ -53,6 +63,12 @@ resource "aws_route_table_association" "public" {
   subnet_id      = aws_subnet.public.id
   route_table_id = aws_route_table.public.id
 }
+resource "aws_route_table_association" "public_subnet_asso" {
+  count = length(var.public_subnet_cidrs)
+  subnet_id      = element(aws_subnet.public_subnets[*].id, count.index)
+  route_table_id = aws_route_table.public.id
+}
+
 resource "aws_route_table_association" "tgw" {
   subnet_id      = aws_subnet.tgw.id
   route_table_id = aws_route_table.public.id
