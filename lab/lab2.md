@@ -4,7 +4,7 @@
 
 ## Objective
 
-In this Lab we will start up our GitHub Codespace with the Lab repository that will allow us to create a base cloud environment with each provider we'd like to build connectivity and test with. This will require access to your Cloud Service Provider accounts to create access credentials for the command line tools that the Terraform plans will use to provision the base cloud environments.
+In this Lab we will start up our GitHub Codespace with the Lab repository that will allow us to create a base cloud environment with each provider we'd like to build connectivity and test with. This will require access to your Cloud Service Provider accounts to create access credentials for the command line tools that the OpenTofu plans will use to provision the base cloud environments.
 
 This Codespace includes a custom, prebuilt, devcontainer that has the following key packages preinstalled.
 
@@ -13,7 +13,7 @@ This Codespace includes a custom, prebuilt, devcontainer that has the following 
 3. Azure CLI
 4. Google Cloud SDK
 5. Oracle Cloud CLI
-6. Terraform
+6. OpenTofu
 
 ---
 
@@ -31,7 +31,7 @@ Click below :arrow_down: to get started :rocket:
 ### Step 2: Fork the repository to save our environment
 
 >[!IMPORTANT]
-> Make sure to do these steps carefully otherwise when the Codespace shutdowns due to inactivity you'll lose the environment variables that the Terraform plans expect.
+> Make sure to do these steps carefully otherwise when the Codespace shutdowns due to inactivity you'll lose the environment variables that the OpenTofu plans expect in the shell.
 
 After a minute or two the Codespace devcontainer will be running, next we'll fork the repository to save our environment.
 
@@ -50,7 +50,9 @@ The quickest way I figured out how to achieve this process:
 
 **Congratulations!**
 
-You now have a Codespace devcontainer that uses the prebuilt image, will save changes to your fork, and use your Codespace Secrets for environment variables. Most importantly when the Codespace shutdown and restarts you won't lose the configuration, setup or Terraform local state. Make sure not to delete the Codespace until you are sure you no longer want to play around with the lab. From here on out stopping and starting the Codespace _should_ be fine.
+You now have a Codespace devcontainer that uses the prebuilt image, will save changes to your fork, and use your Codespace Secrets for environment variables. Most importantly when the Codespace shutdown and restarts you won't lose the configuration, setup or OpenTofu local state.
+
+> **`WARNING:`** Make sure not to delete the Codespace until you are sure you no longer want to play around with the lab. From here on out stopping and starting the Codespace _should_ be fine.
 
 ---
 

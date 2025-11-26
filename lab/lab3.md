@@ -222,7 +222,7 @@ sed -i "/TF_VAR_OCI_FINGERPRINT=\"\"/c\TF_VAR_OCI_FINGERPRINT=\"$TF_VAR_OCI_FING
 
 **Congratulations!**
 
-At this point you've configured OCI CLI with the same permissions as your account. If your account has admin privileges you should be able to use the Terraform plan to build the i2lab environment.
+At this point you've configured OCI CLI with the same permissions as your account. If your account has admin privileges you should be able to use the OpenTofu plan to build the i2lab environment.
 
 </details>
 
