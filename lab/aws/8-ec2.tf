@@ -3,7 +3,7 @@
 ##############################
 
 resource "aws_instance" "i2lab" {
-  ami                         = data.aws_ami.debian12_linux.id //set to use lalab Debian 12 Linux from datasource.tf
+  ami                         = data.aws_ami.debian13_linux.id //set to use lalab Debian 13 Linux from datasource.tf
   instance_type               = var.INSTANCE_TYPE
   associate_public_ip_address = true
   subnet_id                   = aws_subnet.public.id

@@ -34,7 +34,7 @@ variable "AVAILABILITY_ZONE" {
 variable "INSTANCE_TYPE" {
   description = "Type of AWS instance to deploy"
   type        = string
-  default     = "t2.micro" # use t2.micro if you are "free tier eligible" otherwise t3.nano is less expensive
+  default     = "t3.micro" # use t3.micro if you are "free tier eligible" otherwise t3.nano is less expensive
 }
 # set ssh key name and location
 variable "PUBLIC_KEY" {
@@ -59,12 +59,20 @@ variable "VPC_CIDR_BLOCK" {
   default     = "10.192.0.0/16" //change if you need/want your VPC to have a different CIDR block
 }
 
-# set public subnet block
+# set primary public subnet block
 variable "PUBLIC_SUBNET_CIDR_BLOCK" {
   description = "CIDR block for Public Subnet"
   type        = string
   default     = "10.192.1.0/24" //change to give the test VPC a different CIDR block
 }
+
+# set additional public subnet blocks
+variable "public_subnet_cidrs" {
+  description = "Public Subnet CIDR values"
+  type = list(string)
+  default = ["10.192.2.0/24", "10.192.3.0/24", "10.192.4.0/24"]
+}
+
 # set tgw subnet block
 variable "TGW_SUBNET_CIDR_BLOCK" {
   description = "CIDR block for TGW Subnet"

@@ -2,7 +2,7 @@
 
 ## Objective
 
-Establish connectivity between the Internet2 Virtual Router, that you build in **[Lab 1](lab1.md)**, and the CSPs of your choice.
+Establish connectivity between the Internet2 Cloud Router, that you build in **[Lab 1](lab1.md)**, and the CSPs of your choice.
 
 While some key components of dedicated connectivity have been provisioned with code in **[Lab 3](lab3.md)**, such as Azure VNG's, many key components or configuration steps haven't been provisioned. One of the primary objectives of this workshop was to understand the components necessary for dedicated connectivity with the various CSPs. While some of these steps are simple or quick to achieve using code I felt it was important to do many of these processes manually so you could see the components that connect together first hand.
 
@@ -27,7 +27,7 @@ This IPv4 addressing is used for the dedicated connections with each provider in
 ### Step 1: Starting in the Internet2 Insight Console
 
 1. Navigate to your Virtual Network Space (VNS) from [Lab 1](lab1.md)
-2. Find the Virtual Router you created in Lab 1.
+2. Find the Cloud Router you created in Lab 1.
 3. Select **`Add Peering using AWS Direct Connect`**.
 4. In the **Create Peering** window fill in the details:
    - Enter your **AWS Account ID**.
@@ -67,7 +67,7 @@ After the new connection shows as _**available**_:
 5. In the **Connection** pull down select the DX Connection we accepted above :arrow_up:.
 6. In the **Direct Connect gateway** pull down select **`dxgw-i2lab`**.
 7. Enter the **VLAN ID** you choose in the Insight Console for the next connection.
-8. Enter **`55038`** for the **BGP ASN** (of the Internet2 Virtual Router).
+8. Enter **`55038`** for the **BGP ASN** (of the Internet2 Cloud Router).
 9. Expand the **Additional settings** section.
 10. Enter **`10.255.255.234/30`** for **Your router peer ip**.
 11. Enter **`10.255.255.233/30`** for **Amazon router peer IP**.
@@ -94,7 +94,7 @@ Now that you built the DX connection and the DXGW peering we need to associate t
 
 ### Step 5: Attach the TGW with the i2lab VPC
 
-This step was completed in the IaC code we used to provision the base resources for our lab environment in AWS. I documented this before finishing the terraform code and thought it was worth leaving here to help understand this networking component. If you wish to practice the workflow for this section you can comment out the code around lines 14-24 in [**lab/aws/6-tgw.tf**](aws/6-tgw.tf). You will need to then do a **`terraform apply`** and wait for the attachment to delete. (This could take a while, maybe 10 minutes.)
+This step was completed in the IaC code we used to provision the base resources for our lab environment in AWS. I documented this before finishing the terraform code and thought it was worth leaving here to help understand this networking component. If you wish to practice the workflow for this section you can comment out the code around lines 14-24 in [**lab/aws/6-tgw.tf**](aws/6-tgw.tf). You will need to then do a **`tofu apply`** and wait for the attachment to delete. (This could take a while, maybe 10 minutes.)
 
 The final step for the AWS connectivity in this lab is to attach the transit gateway with the `i2lab` VPC.
 
@@ -150,7 +150,7 @@ The process of building ExpressRoute connections from Azure to Internet2 Insight
 This portion of the circuit creation happens in the Internet2 [Insight Console](https://console.internet2.edu/#/vn/list).
 
 1. Navigate to your Virtual Network Space (VNS) from [Lab 1](lab1.md).
-2. Find the Virtual Router you created in Lab 1.
+2. Find the Cloud Router you created in Lab 1.
 3. Select **`Add Peering using Azure ExpressRoute`**.
 ![Azure peering](files/i2cc_azure_peering.png)
 4. Fill in the details:
@@ -233,7 +233,7 @@ In the Google Cloud Console:
 ### Step 2: Create the Internet2 Interconnect to Google Cloud
 
 1. Navigate to your Virtual Network Space (VNS) from [Lab 1](lab1.md).
-2. Find the Virtual Router you created in Lab 1.
+2. Find the Cloud Router you created in Lab 1.
 3. Select **`Add Peering using Google Cloud Partner Interconnect`**.
 4. Enter the connection details:
    - **Pairing Key** from the Google Cloud Console in Step 1 above.
@@ -299,7 +299,7 @@ In the Oracle Console:
 From Internet2 Insight Console
 
 1. Navigate to your Virtual Network Space (VNS) from [Lab 1](lab1.md).
-2. Find the Virtual Router you created in Lab 1.
+2. Find the Cloud Router you created in Lab 1.
 3. Select **`Add Peering using OCI FastConnect`**.
 4. Enter the connection details:
    - **FastConnect OCID** paste the **`OCID`** from Step 1.

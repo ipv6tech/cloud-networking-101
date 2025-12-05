@@ -1,12 +1,12 @@
 # EC2 Instance options
 
-# Grab latest Debian 12 Linux AMI ID for the region defined in the variable (included in free-tier)
-data "aws_ami" "debian12_linux" {
+# Grab latest Debian 13 Linux AMI ID for the region defined in the variable (included in free-tier)
+data "aws_ami" "debian13_linux" {
   most_recent = true
   owners      = ["amazon"]
   filter {
     name   = "name"
-    values = ["debian-12-amd64-*"]
+    values = ["debian-13-amd64-*"]
   }
 }
 

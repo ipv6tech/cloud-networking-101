@@ -13,8 +13,8 @@ The best place to verify routing, today, is by using the Insight Console Looking
 Using the command **`show bgp vrf VNROUTER-NNXXX`** against the correct Internet2 router will show the BGP prefixes in the routing table on that router.
 ![Looking Glass](files/i2cc_show_bgp.png)
 
-1. From the Virtual Network Space note or copy the VRF ID in the left sidebar for the Virtual Router.
-2. On the Virtual Router note the physical device one of the connections uses (e.g., agg1.ashb).
+1. From the Virtual Network Space note or copy the VRF ID in the left sidebar for the Cloud Router.
+2. On the Cloud Router note the physical device one of the connections uses (e.g., agg1.ashb).
 3. Navigate to Insight Console Looking Glass
 4. Select the Internet2 router that one of connections uses (e.g., agg3.ashb).
 5. Type **`show bgp vrf <paste_VRF_ID>`**.
@@ -22,7 +22,7 @@ Using the command **`show bgp vrf VNROUTER-NNXXX`** against the correct Internet
 
 ## Verify BGP peer state
 
-Another place to look in the console is at the Virtual Router in the VNS. Each of the connections will eventually show BGP state "up" and traffic graphs. This can take time for the UI and graphing engine to catch up and start displaying connection state.
+Another place to look in the console is at the Cloud Router in the VNS. Each of the connections will eventually show BGP state "up" and traffic graphs. This can take time for the UI and graphing engine to catch up and start displaying connection state.
 
 ![BGP Peer Status](files/i2cc_bgp_state.png)
 

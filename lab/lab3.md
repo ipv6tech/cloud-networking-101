@@ -107,7 +107,7 @@ Before we can prepare the cli tools to build out our lab environment we have a b
 6. Press **`Copy`** for the verification code.
 7. Paste the verification code into the Codespaces shell and hit **`enter`**.
 8. From the list choose **`Create a new project`**.
-9. Give the new project a name (e.g. **`i2lab-techex2024-YourInitials`**). _(`Note:`This must be globally unique.)_
+9. Give the new project a name (e.g. **`i2lab-techex-YourInitials`**). _(`Note:`This must be globally unique.)_
 10. In the Codespaces shell run **`gcloud projects list`** and note the PROJECT_ID for your new project.
 11. In the Codespaces shell run **`export TF_VAR_GC_PROJECT_ID="<PROJECT_ID>"`**.
 
@@ -222,7 +222,7 @@ sed -i "/TF_VAR_OCI_FINGERPRINT=\"\"/c\TF_VAR_OCI_FINGERPRINT=\"$TF_VAR_OCI_FING
 
 **Congratulations!**
 
-At this point you've configured OCI CLI with the same permissions as your account. If your account has admin privileges you should be able to use the Terraform plan to build the i2lab environment.
+At this point you've configured OCI CLI with the same permissions as your account. If your account has admin privileges you should be able to use the OpenTofu plan to build the i2lab environment.
 
 </details>
 

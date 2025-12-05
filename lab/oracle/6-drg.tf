@@ -12,7 +12,7 @@ resource "oci_core_drg_attachment" "drg_i2lab_attachment" {
 	network_details {
 		id = oci_core_vcn.vcn_i2lab.id
 		type = "VCN"
-		vcn_route_type = "VCN_CIDRS"
+		vcn_route_type = "VCN_CIDRS" #Use SUBNET_CIDRS for no aggregation or VCN_CIDRS for prefix aggregation
 	}
 }
 
@@ -40,7 +40,7 @@ resource "oci_core_drg_route_distribution_statement" "i2lab_drg_route_distributi
 	priority = 1
 }
 
-/* Disabled for the TechEx 2024 workshop. We will manually create this resource in the Oracle Cloud Console.
+/* Disabled for the TechEx workshop. We will manually create this resource in the Oracle Cloud Console.
 # Fast Connect - Virtual Circuit toward Internet2 Layer 3 Ashburn */
 
 /*resource "oci_core_virtual_circuit" "generated_oci_core_virtual_circuit" {

@@ -1,6 +1,6 @@
 # Let's Get started
 
-The labs leverage GitHub Codespaces with Terraform plans to build out basic environments for each CSP so we aren't spending out time together doing click-ops provision of a base environment. By leveraging GitHub Codespaces we avoid spending time installing tools, polluting your laptop, and hopefully avoid the dreaded "works on my machine".
+The labs leverage [GitHub Codespaces](https://github.com/features/codespaces) and [OpenTofu](https://opentofu.org/) Infrastructure as Code (IaC) to build out basic environments for each Cloud Service Provider (CSP) so we aren't spending out time together doing click-ops to provision of a base environment. By leveraging GitHub Codespaces we avoid spending time installing tools, installing software on your laptop, and hopefully avoid the dreaded "works on my machine".
 
 [Lab 1: Setup Internet2 Insight Console](lab1.md)
 
@@ -23,11 +23,11 @@ The labs leverage GitHub Codespaces with Terraform plans to build out basic envi
 >
 > **The following non best practices are adhered to these labs:**
 >
-> - Building the slowest speed connection possible
+> - Building the lowest bandwidth connection possible
 > - Ignoring redundancy (single region, single zones, single connections, etc.)
 > - Not using IPv6 in this version of the workshop
 > - Using minimal security with wide open access
-> - Local state for Terraform plans
+> - Local state (in Github Codespace) for Terraform plans
 > - Probably a whole bunch of others!
 
 ![works_on_my_machine](files/works_on_my.jpg)
