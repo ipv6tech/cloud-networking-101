@@ -52,7 +52,7 @@ The quickest way I figured out how to achieve this process:
 
 You now have a Codespace devcontainer that uses the prebuilt image, will save changes to your fork, and use your Codespace Secrets for environment variables. Most importantly when the Codespace shutdown and restarts you won't lose the configuration, setup or OpenTofu local state.
 
-> [!WARNING]
+> [!CAUTION]
 > Make sure not to delete the Codespace until you are sure you no longer want to play around with the lab. From here on out stopping and starting the Codespace _should_ be fine.
 
 ---

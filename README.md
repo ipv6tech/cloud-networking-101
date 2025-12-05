@@ -100,9 +100,11 @@ As you build out your Free Tier accounts keep in mind that the infrastructure co
 3. [Google Cloud Account, Organization, Project Setup](https://youtu.be/qofqzJbqD3s?si=GSgZ4ngMp7ZOi9nh&t=108)
 4. [Oracle Cloud Account Setup](https://www.youtube.com/watch?v=YnsN52hB8EY)
 
-#### Terraform
+#### OpenTofu
 
-1. [Terraform tutorials](https://developer.hashicorp.com/terraform/tutorials)
+1. [OpenTofu Getting Started](https://opentofu.org/docs/intro/core-workflow)
+2. [OpenTofu Docs](https://opentofu.org/docs/intro)
+3. [OpenTofu tutorial: Spacelift](https://spacelift.io/blog/opentofu-tutorial)
 
 #### Git & GitHub
 

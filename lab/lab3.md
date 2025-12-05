@@ -107,7 +107,7 @@ Before we can prepare the cli tools to build out our lab environment we have a b
 6. Press **`Copy`** for the verification code.
 7. Paste the verification code into the Codespaces shell and hit **`enter`**.
 8. From the list choose **`Create a new project`**.
-9. Give the new project a name (e.g. **`i2lab-techex2024-YourInitials`**). _(`Note:`This must be globally unique.)_
+9. Give the new project a name (e.g. **`i2lab-techex-YourInitials`**). _(`Note:`This must be globally unique.)_
 10. In the Codespaces shell run **`gcloud projects list`** and note the PROJECT_ID for your new project.
 11. In the Codespaces shell run **`export TF_VAR_GC_PROJECT_ID="<PROJECT_ID>"`**.
 

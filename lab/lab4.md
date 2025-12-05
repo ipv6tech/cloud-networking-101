@@ -4,7 +4,7 @@ Regardless of which CSP we are working with the workflow to build out the lab wi
 
 This is a fun one and hopefully all the prep work we've done up to this point will pay off and make this part run smoothly. It's a pretty awesome feeling to provision and removing an environment with IaC with a few commands.
 
-Use the Infrastructure as Code instructions below for each Cloud provider that you want to test with. Once you provision the environment log in to the console(s) and take a look at the resources that you've created in your account. Run a few verifying steps and get comfortable with how to operate inside the lab environment. Care was taken to try to make these are similar as possible.
+Use the Infrastructure as Code instructions below for each cloud provider that you want to test with. Once you provision the environment log in to the console(s) and take a look at the resources that you've created in your account. Run a few verifying steps and get comfortable with how to operate inside the lab environment. Care was taken to try to make these are similar as possible.
 
 > [!TIP]
 > Want to provision multiple environments at once, just open another shell and get the next environment going.
